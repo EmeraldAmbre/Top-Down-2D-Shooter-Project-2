@@ -333,7 +333,7 @@ Transform:
   m_GameObject: {fileID: 451567637}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.8, z: 0}
+  m_LocalPosition: {x: 1.424, y: 0.563, z: 0}
   m_LocalScale: {x: 0.1, y: 1, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -582,7 +582,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &1619735279
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -644,7 +644,7 @@ Transform:
   m_GameObject: {fileID: 1619735278}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.8, z: 0}
+  m_LocalPosition: {x: -1.995, y: 0.8, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -749,7 +749,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8004221302729887478, guid: c1fea4fbcd2c2c143bdaf00ac29c287b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.503
+      value: -0.494
       objectReference: {fileID: 0}
     - target: {fileID: 8004221302729887478, guid: c1fea4fbcd2c2c143bdaf00ac29c287b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -945,7 +945,7 @@ GameObject:
   - component: {fileID: 2105777517}
   - component: {fileID: 2105777516}
   m_Layer: 0
-  m_Name: Asteroid (1)
+  m_Name: Bonus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1012,7 +1012,7 @@ Transform:
   m_GameObject: {fileID: 2105777515}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.8, z: 0}
+  m_LocalPosition: {x: 0, y: -2.345, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
