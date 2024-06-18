@@ -184,7 +184,7 @@ MonoBehaviour:
   - 0
   - 0
   m_targetRadius: 18
-  m_speed: 3
+  m_speed: 10
 --- !u!114 &4814791738780579641
 MonoBehaviour:
   m_ObjectHideFlags: 0

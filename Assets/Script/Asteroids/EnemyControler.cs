@@ -13,12 +13,14 @@ public class EnemyControler : MonoBehaviour {
     private void Start() {
         Vector3 center = new Vector3(m_targetCenter[0], m_targetCenter[1], 0);
         m_directionPoint = GetRandomPointOnCircle(center, m_targetRadius);
+        Vector3 direction = m_directionPoint - transform.position;
+        direction.Normalize();       
+        gameObject.GetComponent<Rigidbody2D>().AddForce(direction * m_speed, ForceMode2D.Impulse);
+
     }
 
     private void Update() {
-        Vector3 direction = m_directionPoint - transform.position;
-        direction.Normalize();
-        gameObject.GetComponent<Rigidbody2D>().AddForce(direction * m_speed * Time.deltaTime, ForceMode2D.Impulse);
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class BackGroundRandomiser : MonoBehaviour
@@ -22,7 +23,7 @@ public class BackGroundRandomiser : MonoBehaviour
         m_numberOfElements = Random.Range(3, 6);
         for (int i = 0; i < m_numberOfElements; i++)
         {
-            m_elementIndex = Random.Range(0, m_numberOfElements);
+            m_elementIndex = Random.Range(0, elements.Length);
             m_xValue = Random.Range(0, m_screenWidth);
             m_yValue = Random.Range(0, m_screenHeight);
             m_scale = Random.Range(0.5f, 5f);
