@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4573247012313868524}
   - component: {fileID: 5482355104380626677}
   - component: {fileID: 7167887924158079283}
+  - component: {fileID: 6496451570696442823}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -241,3 +242,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_missilePrefab: {fileID: 0}
+--- !u!114 &6496451570696442823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8359320273717981478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3f24fbb63b74134db7fd73209c4c8f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_maxHealth: 3
+  m_invincibilityDuration: 2.5
+  m_uiManager: {fileID: 0}
