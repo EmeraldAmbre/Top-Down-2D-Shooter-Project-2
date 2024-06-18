@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8151879180393001651}
   - component: {fileID: 2537168024618142582}
   - component: {fileID: 4707757958411603416}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player - Clone
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -227,9 +227,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f063e317397e324b89a68e0348bc139, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_isOut: 0
+  m_isOutByX: 0
+  m_isOutByY: 0
+  m_isMain: 0
+  m_isTeleporting: 0
   m_moveSpeed: 5
   m_rotationSpeed: 200
+  m_clones:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &2537168024618142582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -258,3 +270,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_missilePrefab: {fileID: 0}
+  m_laserSounds: []

@@ -19,14 +19,8 @@ public class EnemyControler : MonoBehaviour {
         Vector3 direction = m_directionPoint - transform.position;
         direction.Normalize();       
         gameObject.GetComponent<Rigidbody2D>().AddForce(direction * m_speed, ForceMode2D.Impulse);
-<<<<<<< HEAD
-    }
-=======
         m_audioSource = GetComponent<AudioSource>();
-
     }
-
->>>>>>> 93ad6a8a01b677f7c7502ddd71dd42e85ce8e804
 
     private void OnCollisionEnter2D(Collision2D collision) {
         if (collision.gameObject.CompareTag("Missile")) {
