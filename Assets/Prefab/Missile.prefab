@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5419025138711322447}
   - component: {fileID: 7534582204812715539}
   - component: {fileID: 179207924372552975}
+  - component: {fileID: 7349929548380428691}
   m_Layer: 0
   m_Name: Missile
   m_TagString: Missile
@@ -214,3 +215,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_bulletLifeTime: 3
   m_bulletSpeed: 10
+--- !u!114 &7349929548380428691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 737227773312284924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff0405819a26fa44fa26fd9b661c9e24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  x_range: 32
+  y_range: 18

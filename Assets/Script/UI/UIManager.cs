@@ -1,19 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    public Text m_livesText;
-    public Text m_scoreText;
+    [SerializeField] private TextMeshProUGUI m_livesText;
+    [SerializeField] private TextMeshProUGUI m_scoreText;
 
-    public int m_lives = 3;
-    public int m_score = 0;
+    [SerializeField] private int m_lives = 3;
+    [SerializeField] private int m_score = 0;
 
     void Start()
     {
-        UpdateLivesText(); UpdateScoreText();
+        UpdateLivesText();
+        UpdateScoreText();
     }
     public void UpdateLives(int newLives)
     {

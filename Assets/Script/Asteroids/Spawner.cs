@@ -20,6 +20,6 @@ public class Spawner : MonoBehaviour {
 
     void SpawnEnemy()
     {
-        Instantiate(m_enemyPrefab, transform.position, Quaternion.identity);
+        GameObject newEnemy = Instantiate(m_enemyPrefab, transform.position, Quaternion.identity);
     }
 }
