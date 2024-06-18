@@ -7,13 +7,13 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Melting Material
-  m_Shader: {fileID: -6465566751694194690, guid: dda85002017687746bd9f6e4ffe0c5a0, type: 3}
+  m_Name: DissolveMateria
+  m_Shader: {fileID: -6465566751694194690, guid: acb87dfe27ad7c6448b103e46d2fa291, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []
-  m_LightmapFlags: 2
+  m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -23,7 +23,7 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _Texture2D:
+    - _MainTexture:
         m_Texture: {fileID: 2800000, guid: dffef66376be4fa480fb02b19edbe903, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -41,13 +41,13 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _OutlineThickness: 0.1
-    - _QueueControl: 0
-    - _QueueOffset: 0
-    - _Vertical_Dissolve: 1.1
-    m_Colors: []
+    - _DissolveAmount: 0
+    - _DissolveScale: 50
+    - _OutlineThickness: 0.08
+    m_Colors:
+    - _OutlineColor: {r: 0.26453, g: 2.9460616, b: 0, a: 1}
   m_BuildTextureStacks: []
---- !u!114 &1833457471910231681
+--- !u!114 &4737366669742050305
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
