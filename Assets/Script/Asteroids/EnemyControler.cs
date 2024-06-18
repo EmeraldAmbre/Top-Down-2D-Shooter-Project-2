@@ -16,11 +16,6 @@ public class EnemyControler : MonoBehaviour {
         Vector3 direction = m_directionPoint - transform.position;
         direction.Normalize();       
         gameObject.GetComponent<Rigidbody2D>().AddForce(direction * m_speed, ForceMode2D.Impulse);
-
-    }
-
-    private void Update() {
-
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {
