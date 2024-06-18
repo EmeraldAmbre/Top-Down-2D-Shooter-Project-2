@@ -15,10 +15,10 @@ public class EnemyControler : MonoBehaviour {
         m_directionPoint = GetRandomPointOnCircle(center, m_targetRadius);
     }
 
-    void Update() {
+    private void Update() {
         Vector3 direction = m_directionPoint - transform.position;
         direction.Normalize();
-        transform.position += direction * m_speed * Time.deltaTime;
+        gameObject.GetComponent<Rigidbody2D>().AddForce(direction * m_speed * Time.deltaTime, ForceMode2D.Impulse);
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {
