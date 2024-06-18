@@ -9,6 +9,9 @@ public class EnemyControler : MonoBehaviour {
     [SerializeField] private float[] m_targetCenter = new float[2];
     [SerializeField] private float   m_targetRadius;
     [SerializeField] private float   m_speed = 2.5f;
+    AudioSource m_audioSource;
+    [SerializeField] private AudioClip[] m_hitSounds;
+    int m_hitSoundsIndex;
 
     private void Start() {
         Vector3 center = new Vector3(m_targetCenter[0], m_targetCenter[1], 0);
@@ -16,11 +19,20 @@ public class EnemyControler : MonoBehaviour {
         Vector3 direction = m_directionPoint - transform.position;
         direction.Normalize();       
         gameObject.GetComponent<Rigidbody2D>().AddForce(direction * m_speed, ForceMode2D.Impulse);
+<<<<<<< HEAD
     }
+=======
+        m_audioSource = GetComponent<AudioSource>();
+
+    }
+
+>>>>>>> 93ad6a8a01b677f7c7502ddd71dd42e85ce8e804
 
     private void OnCollisionEnter2D(Collision2D collision) {
         if (collision.gameObject.CompareTag("Missile")) {
             StartCoroutine(Death(0.05f));
+            m_hitSoundsIndex = Random.Range(0, m_hitSounds.Length);
+            m_audioSource.PlayOneShot(m_hitSounds[m_hitSoundsIndex]);
         }
     }
 
