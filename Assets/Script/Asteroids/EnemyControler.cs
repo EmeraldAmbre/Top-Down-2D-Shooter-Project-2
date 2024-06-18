@@ -12,14 +12,22 @@ public class EnemyControler : MonoBehaviour {
     AudioSource m_audioSource;
     [SerializeField] private AudioClip[] m_hitSounds;
     int m_hitSoundsIndex;
+    [SerializeField] Sprite[] m_asteroidsSprites;
+    int m_spritesIndex;
+    SpriteRenderer m_spriteRenderer;
 
-    private void Start() {
+    private void Start() 
+    {
+        m_spriteRenderer = GetComponent<SpriteRenderer>();
+        m_spritesIndex = Random.Range(0, m_asteroidsSprites.Length);
+        m_spriteRenderer.sprite = m_asteroidsSprites[m_spritesIndex];
         Vector3 center = new Vector3(m_targetCenter[0], m_targetCenter[1], 0);
         m_directionPoint = GetRandomPointOnCircle(center, m_targetRadius);
         Vector3 direction = m_directionPoint - transform.position;
         direction.Normalize();       
         gameObject.GetComponent<Rigidbody2D>().AddForce(direction * m_speed, ForceMode2D.Impulse);
         m_audioSource = GetComponent<AudioSource>();
+        
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {

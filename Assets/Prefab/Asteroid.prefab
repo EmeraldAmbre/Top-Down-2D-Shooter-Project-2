@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 2747690628134850419, guid: b670ab75dde984907b8570040daa08c5, type: 3}
-  m_Color: {r: 0.13171947, g: 0.754717, b: 0.22553782, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -189,6 +189,12 @@ MonoBehaviour:
   m_hitSounds:
   - {fileID: 8300000, guid: 8fc285758393ecb4eab2e96eea3c15a1, type: 3}
   - {fileID: 8300000, guid: 797961d928a2f1a43b1a8c7ed882aaaa, type: 3}
+  m_asteroidsSprites:
+  - {fileID: 21300000, guid: 9cfe163b4d45209418bd2be099ec32b2, type: 3}
+  - {fileID: 21300000, guid: 3eeb90bc59650ee46a5a110fd17343ad, type: 3}
+  - {fileID: 21300000, guid: baec7fe696b3e78469447faac6b098e8, type: 3}
+  - {fileID: 21300000, guid: dfb1725e999d3c541b30fbaaac5abc73, type: 3}
+  - {fileID: 21300000, guid: eed38a64f1e296b41b605d6951a863ba, type: 3}
 --- !u!114 &4814791738780579641
 MonoBehaviour:
   m_ObjectHideFlags: 0
