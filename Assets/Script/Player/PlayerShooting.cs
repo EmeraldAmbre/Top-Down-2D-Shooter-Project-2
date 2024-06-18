@@ -21,9 +21,11 @@ public class PlayerShooting : MonoBehaviour {
             Quaternion fireRotation = transform.rotation;
             Vector3 firePosition = transform.position;
             Instantiate(m_missilePrefab, firePosition, fireRotation);
-            m_laserIndex = Random.Range(0, m_laserSounds.Length);
-            m_audioSource.PlayOneShot(m_laserSounds[m_laserIndex]);
-
+            if (m_laserSounds.Length != 0)
+            {
+                m_laserIndex = Random.Range(0, m_laserSounds.Length);
+                m_audioSource.PlayOneShot(m_laserSounds[m_laserIndex]);
+            }
         }
     }
 }
