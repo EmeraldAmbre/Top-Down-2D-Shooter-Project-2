@@ -20,9 +20,7 @@ public class EnemyControler : MonoBehaviour {
         direction.Normalize();       
         gameObject.GetComponent<Rigidbody2D>().AddForce(direction * m_speed, ForceMode2D.Impulse);
         m_audioSource = GetComponent<AudioSource>();
-
     }
-
 
     private void OnCollisionEnter2D(Collision2D collision) {
         if (collision.gameObject.CompareTag("Missile")) {

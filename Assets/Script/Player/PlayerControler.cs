@@ -101,6 +101,9 @@ public class PlayerControler : MonoBehaviour {
                 StartCoroutine(TeleporterDelay(0.1f));
             }
         }
+
+        // Desactivate by Outing
+
     }
 
     void FixedUpdate()
