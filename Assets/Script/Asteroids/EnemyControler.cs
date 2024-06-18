@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyControler : MonoBehaviour {
 
     [SerializeField] private Vector3 m_directionPoint;
+    [SerializeField] private Vector3 m_minSize;
     [SerializeField] private float[] m_targetCenter = new float[2];
     [SerializeField] private float   m_targetRadius;
     [SerializeField] private float   m_speed = 2.5f;
@@ -22,17 +23,28 @@ public class EnemyControler : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision) {
         if (collision.gameObject.CompareTag("Missile")) {
-            Destroy(gameObject);
-        }
-        else if (collision.gameObject.CompareTag("Enemy")) {
-            m_directionPoint = Random.insideUnitCircle.normalized;
+            StartCoroutine(Death(0.05f));
         }
     }
 
-    Vector2 GetRandomPointOnCircle(Vector2 center, float radius) {
+    private Vector3 GetRandomPointOnCircle(Vector2 center, float radius) {
         float angle = Random.Range(0f, Mathf.PI * 2);
         float x = Mathf.Cos(angle) * radius + center.x;
         float y = Mathf.Sin(angle) * radius + center.y;
-        return new Vector2(x, y);
+        return new Vector3(x, y, 0);
+    }
+
+    private IEnumerator Death(float time) {
+        Vector3 newSize = transform.localScale * 0.5f;
+        if (newSize.magnitude > m_minSize.magnitude)
+        {
+            for (int i = 0; i < 2; i++)
+            {
+                GameObject child = Instantiate(gameObject, transform.position, transform.rotation);
+                child.transform.localScale = newSize;
+            }
+        }
+        yield return new WaitForSeconds(time);
+        Destroy(gameObject);
     }
 }

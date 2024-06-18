@@ -30,7 +30,7 @@ public class PlayerControler : MonoBehaviour {
         m_movement.x = 0; m_movement.y = Input.GetAxis("Vertical");
 
         // Rotation
-        if (rotationInput != 0) { transform.Rotate(Vector3.forward, rotationInput * m_rotationSpeed * Time.deltaTime); }
+        if (rotationInput != 0) { transform.Rotate(Vector3.back, rotationInput * m_rotationSpeed * Time.deltaTime); }
 
         // Getting out the screen by X
         if (Mathf.Abs(transform.position.x) > 32)
