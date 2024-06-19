@@ -264,24 +264,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_directionPoint: {x: 0, y: 0, z: 0}
-  m_minSize: {x: 0.25, y: 0.25, z: 0.25}
+  m_minSize: {x: 0.5, y: 0.5, z: 0.5}
   m_targetCenter:
   - 0
   - 0
   m_targetRadius: 18
   m_speed: 10
-  m_hitSounds:
-  - {fileID: 8300000, guid: 8fc285758393ecb4eab2e96eea3c15a1, type: 3}
-  - {fileID: 8300000, guid: 797961d928a2f1a43b1a8c7ed882aaaa, type: 3}
+  m_impactLight: {fileID: 5225992461006307708}
+  m_lifePoints: 3
+  m_hitParticles: {fileID: 4391226407440816716}
   m_asteroidsSprites:
   - {fileID: 21300000, guid: 9cfe163b4d45209418bd2be099ec32b2, type: 3}
   - {fileID: 21300000, guid: 3eeb90bc59650ee46a5a110fd17343ad, type: 3}
   - {fileID: 21300000, guid: baec7fe696b3e78469447faac6b098e8, type: 3}
   - {fileID: 21300000, guid: dfb1725e999d3c541b30fbaaac5abc73, type: 3}
   - {fileID: 21300000, guid: eed38a64f1e296b41b605d6951a863ba, type: 3}
-  m_impactLight: {fileID: 5225992461006307708}
-  m_lifePoints: 3
-  m_hitParticles: {fileID: 4391226407440816716}
+  m_hitSounds:
+  - {fileID: 8300000, guid: 8fc285758393ecb4eab2e96eea3c15a1, type: 3}
+  - {fileID: 8300000, guid: 797961d928a2f1a43b1a8c7ed882aaaa, type: 3}
+  m_childPrefab: {fileID: 0}
 --- !u!114 &4814791738780579641
 MonoBehaviour:
   m_ObjectHideFlags: 0

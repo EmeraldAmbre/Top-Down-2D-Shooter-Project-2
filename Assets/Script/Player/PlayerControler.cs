@@ -13,19 +13,16 @@ public class PlayerControler : MonoBehaviour {
     [SerializeField] private float m_moveSpeed = 5f;
     [SerializeField] private float m_rotationSpeed = 200f;
     [SerializeField] private GameObject[] m_clones = new GameObject[8];
-    
+
+    // Thrust particles for impulse of the spaceship
+    [SerializeField] private GameObject  m_thrustParticles;
+    [SerializeField] private GameObject  m_thrustSprites;
+    [SerializeField] private AudioSource m_thrustAudioSource;
+    [SerializeField] private AudioClip   m_thrustSound;
+    [SerializeField] private float       m_thrustVolume;
 
     private Vector2 m_movement;
     private Rigidbody2D m_rigidbody;
-
-    [SerializeField] GameObject m_thrustParticles;
-    [SerializeField] GameObject m_thrustSprites;
-
-
-
-    [SerializeField] AudioSource m_thrustAudioSource;
-    [SerializeField] AudioClip m_thrustSound;
-    [SerializeField] float m_thrustVolume;
 
     void Start() {
         m_rigidbody = GetComponent<Rigidbody2D>();
@@ -37,23 +34,16 @@ public class PlayerControler : MonoBehaviour {
 
         // Inputs
         float rotationInput = Input.GetAxis("Horizontal");
-       
-
-        if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            ThrustAnimation();
-            Debug.Log("activated");
-        }
-        else if (Input.GetKeyUp(KeyCode.UpArrow))
-        {
-            ThrustStop();
-        }
 
         // Movement
         m_movement.x = 0; m_movement.y = Input.GetAxis("Vertical");
 
         // Rotation
         if (rotationInput != 0) { transform.Rotate(Vector3.back, rotationInput * m_rotationSpeed * Time.deltaTime); }
+
+        // Activate or desactivate the thrust particles animation
+        if (rotationInput != 0 || m_movement.y != 0) { ThrustAnimation(); }
+        else { ThrustStop(); }
 
         // Getting out the screen by X
         if (Mathf.Abs(transform.position.x) > 32)
@@ -143,20 +133,15 @@ public class PlayerControler : MonoBehaviour {
         m_isTeleporting = false;
     }
 
-    void ThrustAnimation()
-    {
+    // Animating the thrust particles behind the spaceship
+    void ThrustAnimation() {
         m_thrustParticles.SetActive(true);
         m_thrustSprites.SetActive(true);
         m_thrustAudioSource.PlayOneShot(m_thrustSound, m_thrustVolume);
     }
-
-    void ThrustStop()
-    {
+    void ThrustStop() {
         m_thrustAudioSource.Stop();
         m_thrustParticles.SetActive(false);
         m_thrustSprites.SetActive(false);
-
-
-
     }
 }
