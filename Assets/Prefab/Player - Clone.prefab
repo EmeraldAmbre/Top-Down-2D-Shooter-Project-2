@@ -33,7 +33,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5300014459955762794}
@@ -147,7 +147,7 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -243,7 +243,11 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  m_thrust: {fileID: 6182851032247165749}
+  m_thrustParticles: {fileID: 0}
+  m_thrustSprites: {fileID: 0}
+  m_thrustAudioSource: {fileID: 0}
+  m_thrustSound: {fileID: 0}
+  m_thrustVolume: 0
 --- !u!114 &2537168024618142582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -258,7 +262,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_maxHealth: 3
   m_invincibilityDuration: 2.5
-  m_uiManager: {fileID: 0}
+  m_lifeBar: {fileID: 0}
+  m_bumpSound: {fileID: 0}
 --- !u!114 &4707757958411603416
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -361,10 +366,5 @@ PrefabInstance:
 --- !u!4 &5300014459955762794 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5138523102552395736, guid: 0b47743e98237d24ea302e814007bc6c, type: 3}
-  m_PrefabInstance: {fileID: 1063655022234884530}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &6182851032247165749 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6561527890211584647, guid: 0b47743e98237d24ea302e814007bc6c, type: 3}
   m_PrefabInstance: {fileID: 1063655022234884530}
   m_PrefabAsset: {fileID: 0}

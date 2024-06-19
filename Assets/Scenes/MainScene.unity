@@ -878,6 +878,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4044555809133783792, guid: cbb17e9e5b5654c44983960321b2d09c, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4138207270439928949, guid: cbb17e9e5b5654c44983960321b2d09c, type: 3}
       propertyPath: m_Name
       value: Player - Clone 5
@@ -1020,18 +1024,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2537168024618142582, guid: cbb17e9e5b5654c44983960321b2d09c, type: 3}
-      propertyPath: m_uiManager
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3062681259408803663, guid: cbb17e9e5b5654c44983960321b2d09c, type: 3}
-      propertyPath: m_player
-      value: 
-      objectReference: {fileID: 1290100092}
-    - target: {fileID: 3496873628902880598, guid: cbb17e9e5b5654c44983960321b2d09c, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 3496873628902880598, guid: cbb17e9e5b5654c44983960321b2d09c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -64
@@ -1075,22 +1067,6 @@ PrefabInstance:
     - target: {fileID: 4138207270439928949, guid: cbb17e9e5b5654c44983960321b2d09c, type: 3}
       propertyPath: m_Name
       value: Player - Clone 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4707757958411603416, guid: cbb17e9e5b5654c44983960321b2d09c, type: 3}
-      propertyPath: m_missilePrefab
-      value: 
-      objectReference: {fileID: 737227773312284924, guid: 35259bb3095d63641ad77cd9ef088572, type: 3}
-    - target: {fileID: 6393790997876872205, guid: cbb17e9e5b5654c44983960321b2d09c, type: 3}
-      propertyPath: m_BodyType
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6393790997876872205, guid: cbb17e9e5b5654c44983960321b2d09c, type: 3}
-      propertyPath: m_Constraints
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6393790997876872205, guid: cbb17e9e5b5654c44983960321b2d09c, type: 3}
-      propertyPath: m_GravityScale
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8151879180393001651, guid: cbb17e9e5b5654c44983960321b2d09c, type: 3}
       propertyPath: m_thrustSprites
@@ -1161,6 +1137,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4044555809133783792, guid: cbb17e9e5b5654c44983960321b2d09c, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4138207270439928949, guid: cbb17e9e5b5654c44983960321b2d09c, type: 3}
       propertyPath: m_Name
       value: Player - Clone 7
@@ -1195,11 +1175,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cbb17e9e5b5654c44983960321b2d09c, type: 3}
---- !u!4 &1290100092 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4816948199581212169, guid: b78858291f5acbb49b77f31c28cb161e, type: 3}
-  m_PrefabInstance: {fileID: 811743160678143697}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1394908480
 GameObject:
   m_ObjectHideFlags: 0
@@ -1323,6 +1298,10 @@ PrefabInstance:
     - target: {fileID: 3496873628902880598, guid: cbb17e9e5b5654c44983960321b2d09c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4044555809133783792, guid: cbb17e9e5b5654c44983960321b2d09c, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4138207270439928949, guid: cbb17e9e5b5654c44983960321b2d09c, type: 3}
       propertyPath: m_Name
@@ -1506,6 +1485,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4044555809133783792, guid: cbb17e9e5b5654c44983960321b2d09c, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4138207270439928949, guid: cbb17e9e5b5654c44983960321b2d09c, type: 3}
       propertyPath: m_Name
       value: Player - Clone 8
@@ -1595,6 +1578,10 @@ PrefabInstance:
     - target: {fileID: 3496873628902880598, guid: cbb17e9e5b5654c44983960321b2d09c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4044555809133783792, guid: cbb17e9e5b5654c44983960321b2d09c, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4138207270439928949, guid: cbb17e9e5b5654c44983960321b2d09c, type: 3}
       propertyPath: m_Name
@@ -1696,6 +1683,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4044555809133783792, guid: cbb17e9e5b5654c44983960321b2d09c, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4138207270439928949, guid: cbb17e9e5b5654c44983960321b2d09c, type: 3}
       propertyPath: m_Name
       value: Player - Clone 6
@@ -1790,6 +1781,10 @@ PrefabInstance:
     - target: {fileID: 3496873628902880598, guid: cbb17e9e5b5654c44983960321b2d09c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4044555809133783792, guid: cbb17e9e5b5654c44983960321b2d09c, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4138207270439928949, guid: cbb17e9e5b5654c44983960321b2d09c, type: 3}
       propertyPath: m_Name
@@ -2009,7 +2004,6 @@ SceneRoots:
   - {fileID: 519420032}
   - {fileID: 619394802}
   - {fileID: 2120231506}
-  - {fileID: 41334181}
   - {fileID: 811270552}
   - {fileID: 1122240914}
   - {fileID: 811743160678143697}
@@ -2021,3 +2015,4 @@ SceneRoots:
   - {fileID: 1914604482}
   - {fileID: 1250793259}
   - {fileID: 1572637851}
+  - {fileID: 41334181}
