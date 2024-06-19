@@ -32,15 +32,6 @@ public class PlayerControler : MonoBehaviour {
         // Inputs
         float rotationInput = Input.GetAxis("Horizontal");
 
-        if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            ThrustAnimation();
-        }
-        else if (Input.GetKeyUp(KeyCode.UpArrow))
-        {
-            ThrustStop();
-        }
-
         // Movement
         m_movement.x = 0; m_movement.y = Input.GetAxis("Vertical");
 
@@ -64,10 +55,9 @@ public class PlayerControler : MonoBehaviour {
         { m_isOutByY = false; }
 
         // Teleporting by X
-        if (m_isOutByX && m_isMain)
-        {
-            if (!m_isTeleporting)
-            {
+        if (m_isOutByX && m_isMain) {
+            if (!m_isTeleporting) {
+
                 m_isTeleporting = true;
                 Vector3 newPosition = new Vector3(-transform.position.x, transform.position.y, transform.position.z);
                 transform.position = newPosition;
@@ -123,8 +113,10 @@ public class PlayerControler : MonoBehaviour {
             }
         }
 
-        // Desactivate by Outing
-
+        // Desactivate the clone if it's out of screen
+        if ((m_isOutByX || m_isOutByY) && !m_isMain) {
+            GetComponent<PolygonCollider2D>().enabled = false;
+        }
     }
 
     void FixedUpdate()

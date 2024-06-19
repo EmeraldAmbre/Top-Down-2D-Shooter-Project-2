@@ -15,7 +15,6 @@ public class EnemyControler : MonoBehaviour {
     [SerializeField] private GameObject m_hitParticles;
     [SerializeField] private Sprite[]   m_asteroidsSprites;
     [SerializeField] private AudioClip[] m_hitSounds;
-    [SerializeField] private GameObject m_childPrefab;
 
     SpriteRenderer m_spriteRenderer;
     AudioSource m_audioSource;
@@ -76,7 +75,7 @@ public class EnemyControler : MonoBehaviour {
         if (newSize.magnitude >= m_minSize.magnitude)
         {
             for (int i = 0; i < 2; i++) {
-                GameObject child = Instantiate(m_childPrefab, transform.position, transform.rotation);
+                GameObject child = Instantiate(gameObject, transform.position, transform.rotation);
                 child.transform.localScale = newSize;
             }
         }
