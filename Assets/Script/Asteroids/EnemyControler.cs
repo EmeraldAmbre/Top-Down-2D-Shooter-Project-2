@@ -11,6 +11,7 @@ public class EnemyControler : MonoBehaviour {
     [SerializeField] private float      m_targetRadius;
     [SerializeField] private float      m_speed = 2.5f;
     [SerializeField] private Light2D    m_impactLight;
+    float m_impactLightIntensity;
     [SerializeField] private int        m_lifePoints;
     [SerializeField] private GameObject m_hitParticles;
     [SerializeField] private Sprite[]   m_asteroidsSprites;
@@ -50,15 +51,18 @@ public class EnemyControler : MonoBehaviour {
         if (collider.gameObject.layer == 8) {
 
             m_impactLight.transform.position = collider.transform.position;
+            m_impactLight.enabled = true;
+            StartCoroutine(FadeOut());
             m_hitParticles.transform.position = collider.transform.position;
             m_hitParticles.SetActive(true);
-            m_impactLight.enabled = true;
+            
 
             m_lifePoints -= 1;
             if (m_lifePoints <= 0) { StartCoroutine(Death(0.05f)); }
 
             m_hitSoundsIndex = Random.Range(0, m_hitSounds.Length);
             m_audioSource.PlayOneShot(m_hitSounds[m_hitSoundsIndex]);
+            Destroy(collider.gameObject);
         }
     }
 
@@ -100,5 +104,20 @@ public class EnemyControler : MonoBehaviour {
         yield return new WaitForSeconds(time);
 
         Destroy(gameObject,0.5f);
+    }
+
+    IEnumerator FadeOut()
+    {
+        float timeElapsed = 0;
+        float lerpDuration = 500f;
+        Debug.Log(m_impactLight.intensity);
+        while (timeElapsed < lerpDuration)
+        {          
+            m_impactLightIntensity = Mathf.Lerp(m_impactLight.intensity,0, timeElapsed / lerpDuration);
+            Debug.Log(m_impactLightIntensity);
+            m_impactLight.intensity= m_impactLightIntensity;
+            timeElapsed += Time.deltaTime;
+            yield return null;
+        }
     }
 }
