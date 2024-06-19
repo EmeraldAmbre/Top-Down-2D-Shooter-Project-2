@@ -8,6 +8,8 @@ public class PlayerParameters : MonoBehaviour {
     [SerializeField] private float     m_invincibilityDuration = 2.5f;
     //[SerializeField] private UIManager m_uiManager;
     [SerializeField] LifeBar m_lifeBar;
+    AudioSource m_audioSource;
+    [SerializeField] AudioClip m_bumpSound;
 
     private int   m_currentHealth;
     private bool  m_isInvincible;
@@ -18,6 +20,7 @@ public class PlayerParameters : MonoBehaviour {
         m_isInvincible = false;
         m_isSpriteActive = true;
         m_currentHealth = m_maxHealth;
+        m_audioSource = GetComponent<AudioSource>();
     }
 
     void Update () {
@@ -28,6 +31,7 @@ public class PlayerParameters : MonoBehaviour {
         if (collision.gameObject.CompareTag("Enemy")) {
             if (!m_isInvincible) {
                 m_currentHealth -= 1;
+                m_audioSource.PlayOneShot(m_bumpSound);
                 m_lifeBar.GetlifeDown(m_maxHealth);
                 m_isInvincible = true;
                 //m_uiManager.UpdateLives(m_currentHealth);
