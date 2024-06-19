@@ -6,7 +6,8 @@ public class PlayerParameters : MonoBehaviour {
 
     [SerializeField] private int       m_maxHealth = 3;
     [SerializeField] private float     m_invincibilityDuration = 2.5f;
-    [SerializeField] private UIManager m_uiManager;
+    //[SerializeField] private UIManager m_uiManager;
+    [SerializeField] LifeBar m_lifeBar;
 
     private int   m_currentHealth;
     private bool  m_isInvincible;
@@ -27,8 +28,9 @@ public class PlayerParameters : MonoBehaviour {
         if (collision.gameObject.CompareTag("Enemy")) {
             if (!m_isInvincible) {
                 m_currentHealth -= 1;
+                m_lifeBar.GetlifeDown(m_maxHealth);
                 m_isInvincible = true;
-                m_uiManager.UpdateLives(m_currentHealth);
+                //m_uiManager.UpdateLives(m_currentHealth);
                 m_invincibilityTimer = m_invincibilityDuration;
             }
         }
