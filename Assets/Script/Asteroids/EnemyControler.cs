@@ -91,6 +91,10 @@ public class EnemyControler : MonoBehaviour {
 
     private IEnumerator Death(float time) {
 
+        Vector3 bigAsteroidsScale = new (2, 2, 2);
+
+        if (transform.localScale == bigAsteroidsScale) GameController._bigAsteroids -= 1;
+
         Vector3 newSize = transform.localScale * 0.5f;
 
         if (newSize.magnitude >= m_minSize.magnitude)
