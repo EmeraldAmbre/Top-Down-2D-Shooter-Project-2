@@ -1,19 +1,17 @@
 using System.Collections;
-using System.Collections.Generic;
-using System.Security.Cryptography;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
-public class PlayerControler : MonoBehaviour {
+public class PlayerControler : MonoBehaviour
+{
 
-    [SerializeField] private bool  m_isOutByX;
-    [SerializeField] private bool  m_isOutByY;
-    [SerializeField] private bool  m_isMain;
-    [SerializeField] private bool  m_isTeleporting;
+    [SerializeField] private bool m_isOutByX;
+    [SerializeField] private bool m_isOutByY;
+    [SerializeField] private bool m_isMain;
+    [SerializeField] private bool m_isTeleporting;
     [SerializeField] private float m_moveSpeed = 5f;
     [SerializeField] private float m_rotationSpeed = 200f;
     [SerializeField] private GameObject[] m_clones = new GameObject[8];
-    
+
 
     private Vector2 m_movement;
     private Rigidbody2D m_rigidbody;
@@ -27,22 +25,23 @@ public class PlayerControler : MonoBehaviour {
     [SerializeField] AudioClip m_thrustSound;
     [SerializeField] float m_thrustVolume;
 
-    void Start() {
+    void Start()
+    {
         m_rigidbody = GetComponent<Rigidbody2D>();
         m_isTeleporting = false;
         m_thrustAudioSource = GetComponent<AudioSource>();
     }
 
-    void Update() {
+    void Update()
+    {
 
         // Inputs
         float rotationInput = Input.GetAxis("Horizontal");
-       
+
 
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             ThrustAnimation();
-            Debug.Log("activated");
         }
         else if (Input.GetKeyUp(KeyCode.UpArrow))
         {
@@ -68,8 +67,10 @@ public class PlayerControler : MonoBehaviour {
         { m_isOutByY = false; }
 
         // Teleporting by X
-        if (m_isOutByX && m_isMain) {
-            if (!m_isTeleporting) {
+        if (m_isOutByX && m_isMain)
+        {
+            if (!m_isTeleporting)
+            {
                 m_isTeleporting = true;
                 Vector3 newPosition = new Vector3(-transform.position.x, transform.position.y, transform.position.z);
                 transform.position = newPosition;
@@ -97,8 +98,10 @@ public class PlayerControler : MonoBehaviour {
         }
 
         // Teleporting by Y
-        if (m_isOutByY && m_isMain) {
-            if (!m_isTeleporting) {
+        if (m_isOutByY && m_isMain)
+        {
+            if (!m_isTeleporting)
+            {
                 m_isTeleporting = true;
                 Vector3 newPosition = new Vector3(transform.position.x, -transform.position.y, transform.position.z);
                 transform.position = newPosition;
@@ -145,16 +148,46 @@ public class PlayerControler : MonoBehaviour {
 
     void ThrustAnimation()
     {
-        m_thrustParticles.SetActive(true);
-        m_thrustSprites.SetActive(true);
-        m_thrustAudioSource.PlayOneShot(m_thrustSound, m_thrustVolume);
+        if (m_thrustAudioSource != null)
+        {
+            m_thrustAudioSource?.PlayOneShot(m_thrustSound, m_thrustVolume);
+
+        }
+
+        if (m_thrustParticles != null)
+        {
+            m_thrustParticles?.SetActive(true);
+
+        }
+
+        if (m_thrustSprites != null)
+        {
+            m_thrustSprites?.SetActive(true);
+
+        }
+
     }
 
     void ThrustStop()
     {
-        m_thrustAudioSource.Stop();
-        m_thrustParticles.SetActive(false);
-        m_thrustSprites.SetActive(false);
+        if (m_thrustAudioSource != null)
+        {
+
+            m_thrustAudioSource?.Stop();
+        }
+
+        if (m_thrustParticles != null)
+        {
+            m_thrustParticles?.SetActive(false);
+
+        }
+
+        if (m_thrustSprites != null)
+        {
+            m_thrustSprites?.SetActive(false);
+
+        }
+
 
 
 

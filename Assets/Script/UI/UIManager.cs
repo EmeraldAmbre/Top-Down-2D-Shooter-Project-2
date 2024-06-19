@@ -12,11 +12,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private int m_lives = 3;
     [SerializeField] private int m_score = 0;
 
-    void Start()
-    {
-        UpdateLivesText();
-        UpdateScoreText();
-    }
+
     public void UpdateLives(int newLives)
     {
         m_lives = newLives; UpdateLivesText();

@@ -8,28 +8,13 @@ public class LifeBar : MonoBehaviour
 
     [SerializeField] Image m_lifeBar;
     [SerializeField] Image m_lifeHeld;
-    [SerializeField] float m_lifeCount;
-    float m_lifeLost;
-    // Start is called before the first frame update
-    void Start()
-    {
-        m_lifeLost = 1/4;
-    }
+    float m_lifeCount;
+    
 
-    // Update is called once per frame
-    void Update()
+     public void GetlifeDown(float maxHealth)
     {
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            GetlifeDown();
-        }
-    }
-
-     void GetlifeDown()
-    {
-
+        m_lifeCount = maxHealth;
         m_lifeBar.fillAmount = m_lifeBar.fillAmount - (1 / m_lifeCount);
-        Debug.Log("lifebar fill amount: " + ( (1 / m_lifeCount)));
         StartCoroutine(LifeProjection());
 
     }
