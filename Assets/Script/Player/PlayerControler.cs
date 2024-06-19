@@ -39,8 +39,18 @@ public class PlayerControler : MonoBehaviour {
         if (rotationInput != 0) { transform.Rotate(Vector3.back, rotationInput * m_rotationSpeed * Time.deltaTime); }
 
         // Activate or desactivate the thrust particles animation
+
         if (rotationInput != 0 || m_movement.y != 0) { ThrustAnimation(); }
         else { ThrustStop(); }
+
+        /* if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.UpArrow)
+                || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.W)) {
+            ThrustAnimation();
+        }
+        else if (Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.UpArrow)
+                || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.W)) {
+            ThrustStop();
+        } */
 
         // Getting out the screen by X
         if (Mathf.Abs(transform.position.x) > 32)
