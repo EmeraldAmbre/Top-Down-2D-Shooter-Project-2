@@ -1570,7 +1570,7 @@ MonoBehaviour:
   - {x: 25, y: -15, z: 0}
   - {x: -25, y: -15, z: 0}
   m_enemyPrefab: {fileID: 700040816941011377, guid: e46ca655096d32044833938f7081d93f, type: 3}
-  m_spawnInterval: 2
+  m_spawnInterval: 5
   m_scoreText: {fileID: 613240689}
 --- !u!1001 &811743160678143697
 PrefabInstance:
