@@ -187,6 +187,7 @@ MonoBehaviour:
   m_targetRadius: 18
   m_speed: 2
   m_lifePoints: 3
+  m_child: {fileID: 8637979295832772822, guid: ab003248acc5f064480764af428218d7, type: 3}
   m_hitParticles: {fileID: 6692236184600500255, guid: fff1a1a4689e0514c9bed34e782b3916, type: 3}
   m_hitLightObject: {fileID: 2262732006222842065, guid: ccbf7ca01d3cdb54a93657abce3339c9, type: 3}
   m_asteroidsSprites:
