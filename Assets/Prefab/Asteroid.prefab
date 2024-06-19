@@ -162,7 +162,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 9cfe163b4d45209418bd2be099ec32b2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3eeb90bc59650ee46a5a110fd17343ad, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -236,7 +236,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.18, y: 2.0873926}
+    oldSize: {x: 2.433, y: 1.4885494}
     newSize: {x: 1, y: 0.8828125}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -269,7 +269,7 @@ MonoBehaviour:
   - 0
   - 0
   m_targetRadius: 18
-  m_speed: 10
+  m_speed: 2
   m_impactLight: {fileID: 5225992461006307708}
   m_lifePoints: 3
   m_hitParticles: {fileID: 4391226407440816716}
@@ -282,7 +282,6 @@ MonoBehaviour:
   m_hitSounds:
   - {fileID: 8300000, guid: 8fc285758393ecb4eab2e96eea3c15a1, type: 3}
   - {fileID: 8300000, guid: 797961d928a2f1a43b1a8c7ed882aaaa, type: 3}
-  m_childPrefab: {fileID: 700040816941011377}
 --- !u!114 &4814791738780579641
 MonoBehaviour:
   m_ObjectHideFlags: 0
