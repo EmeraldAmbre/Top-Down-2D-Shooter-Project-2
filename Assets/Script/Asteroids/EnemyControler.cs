@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
@@ -89,6 +90,8 @@ public class EnemyControler : MonoBehaviour {
 
         GetComponent<PolygonCollider2D>().enabled = false;
         GetComponent<SpriteRenderer>().enabled = false;
+
+        GameController._playerScore += 1;
 
         Vector3 bigAsteroidsScale = new (2, 2, 2);
 

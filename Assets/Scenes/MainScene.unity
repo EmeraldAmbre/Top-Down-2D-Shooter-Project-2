@@ -383,6 +383,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &613240689 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6771150482699879862, guid: bca63d370ad8d9e4fa366d03d6fdcbb4, type: 3}
+  m_PrefabInstance: {fileID: 41334181}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -1510,6 +1521,7 @@ MonoBehaviour:
   - {x: -25, y: -15, z: 0}
   m_enemyPrefab: {fileID: 700040816941011377, guid: e46ca655096d32044833938f7081d93f, type: 3}
   m_spawnInterval: 2
+  m_scoreText: {fileID: 613240689}
 --- !u!1001 &811743160678143697
 PrefabInstance:
   m_ObjectHideFlags: 0
