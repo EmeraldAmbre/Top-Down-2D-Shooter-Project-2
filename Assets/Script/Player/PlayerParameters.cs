@@ -6,15 +6,14 @@ public class PlayerParameters : MonoBehaviour {
 
     [SerializeField] private int       m_maxHealth = 3;
     [SerializeField] private float     m_invincibilityDuration = 2.5f;
-    //[SerializeField] private UIManager m_uiManager;
-    [SerializeField] LifeBar m_lifeBar;
-    AudioSource m_audioSource;
-    [SerializeField] AudioClip m_bumpSound;
+    [SerializeField] private LifeBar   m_lifeBar;
+    [SerializeField] private AudioClip m_bumpSound;
 
     private int   m_currentHealth;
     private bool  m_isInvincible;
     private bool  m_isSpriteActive;
     private float m_invincibilityTimer;
+    private AudioSource m_audioSource;
 
     void Start () {
         m_isInvincible = false;
@@ -27,18 +26,29 @@ public class PlayerParameters : MonoBehaviour {
         InvincibilityFrame();
     }
 
-    private void OnCollisionEnter2D(Collision2D collision) {
+    void OnTriggerEnter2D(Collider2D collider) {
+        if (collider.gameObject.layer == 6) {
+            if (!m_isInvincible) {
+                m_currentHealth -= 1;
+                m_audioSource.PlayOneShot(m_bumpSound);
+                m_lifeBar.GetlifeDown(m_maxHealth);
+                m_isInvincible = true;
+                m_invincibilityTimer = m_invincibilityDuration;
+            }
+        }
+    }
+
+    /* private void OnCollisionEnter2D(Collision2D collision) {
         if (collision.gameObject.CompareTag("Enemy")) {
             if (!m_isInvincible) {
                 m_currentHealth -= 1;
                 m_audioSource.PlayOneShot(m_bumpSound);
                 m_lifeBar.GetlifeDown(m_maxHealth);
                 m_isInvincible = true;
-                //m_uiManager.UpdateLives(m_currentHealth);
                 m_invincibilityTimer = m_invincibilityDuration;
             }
         }
-    }
+    } */
 
     private void InvincibilityFrame() {
         if (m_isInvincible) {

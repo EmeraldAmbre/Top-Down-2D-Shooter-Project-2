@@ -45,7 +45,24 @@ public class EnemyControler : MonoBehaviour {
         else if (scale == lilBro) m_lifePoints = 1;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision) {
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.gameObject.layer == 8) {
+
+            m_impactLight.transform.position = collider.transform.position;
+            m_hitParticles.transform.position = collider.transform.position;
+            m_hitParticles.SetActive(true);
+            m_impactLight.enabled = true;
+
+            m_lifePoints -= 1;
+            if (m_lifePoints <= 0) { StartCoroutine(Death(0.05f)); }
+
+            m_hitSoundsIndex = Random.Range(0, m_hitSounds.Length);
+            m_audioSource.PlayOneShot(m_hitSounds[m_hitSoundsIndex]);
+        }
+    }
+
+    /* private void OnCollisionEnter2D(Collision2D collision) {
         if (collision.gameObject.layer == 8) {
 
             m_impactLight.transform.position = collision.GetContact(0).point;
@@ -59,7 +76,7 @@ public class EnemyControler : MonoBehaviour {
             m_hitSoundsIndex = Random.Range(0, m_hitSounds.Length);
             m_audioSource.PlayOneShot(m_hitSounds[m_hitSoundsIndex]);
         }
-    }
+    } */
 
     private Vector3 GetRandomPointOnCircle(Vector2 center, float radius) {
         float angle = Random.Range(0f, Mathf.PI * 2);
