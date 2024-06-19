@@ -10,12 +10,15 @@ public class EnemyControler : MonoBehaviour {
     [SerializeField] private float[]    m_targetCenter = new float[2];
     [SerializeField] private float      m_targetRadius;
     [SerializeField] private float      m_speed = 2.5f;
-    [SerializeField] private Light2D    m_impactLight;
+    private GameObject m_hitLightInstance;
+    private GameObject m_hitParticlesInstance;
     float m_impactLightIntensity;
     [SerializeField] private int        m_lifePoints;
     [SerializeField] private GameObject m_hitParticles;
+    [SerializeField] GameObject m_hitLightObject;
     [SerializeField] private Sprite[]   m_asteroidsSprites;
     [SerializeField] private AudioClip[] m_hitSounds;
+
 
     SpriteRenderer m_spriteRenderer;
     AudioSource m_audioSource;
@@ -50,11 +53,13 @@ public class EnemyControler : MonoBehaviour {
     {
         if (collider.gameObject.layer == 8) {
 
-            m_impactLight.transform.position = collider.transform.position;
-            m_impactLight.enabled = true;
+            m_hitLightInstance = Instantiate(m_hitLightObject,gameObject.transform);
+            m_hitLightInstance.transform.position = collider.transform.position;
             StartCoroutine(FadeOut());
-            m_hitParticles.transform.position = collider.transform.position;
-            m_hitParticles.SetActive(true);
+            m_hitParticlesInstance = Instantiate(m_hitParticles, gameObject.transform);
+            m_hitParticlesInstance.transform.position = collider.transform.position;
+            m_hitParticlesInstance.transform.rotation = Quaternion.LookRotation(Vector3.forward, collider.transform.up);
+            Debug.Log(m_hitParticlesInstance.transform.rotation.eulerAngles);
             
 
             m_lifePoints -= 1;
@@ -114,12 +119,11 @@ public class EnemyControler : MonoBehaviour {
     {
         float timeElapsed = 0;
         float lerpDuration = 500f;
-        Debug.Log(m_impactLight.intensity);
+        Light2D light = m_hitLightInstance.GetComponent<Light2D>();
         while (timeElapsed < lerpDuration)
         {          
-            m_impactLightIntensity = Mathf.Lerp(m_impactLight.intensity,0, timeElapsed / lerpDuration);
-            Debug.Log(m_impactLightIntensity);
-            m_impactLight.intensity= m_impactLightIntensity;
+            m_impactLightIntensity = Mathf.Lerp(light.intensity,0, timeElapsed / lerpDuration);
+            light.intensity = m_impactLightIntensity;
             timeElapsed += Time.deltaTime;
             yield return null;
         }

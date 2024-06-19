@@ -141,7 +141,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3522723471344909915}
   - {fileID: 9004613165890065989}
@@ -187,7 +187,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 100
   m_Sprite: {fileID: 21300000, guid: b93ffa3431bee43418021f8e2111fae2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -312,8 +312,8 @@ MonoBehaviour:
     m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 3
-  m_PointLightOuterRadius: 8
+  m_PointLightInnerRadius: 2.5
+  m_PointLightOuterRadius: 7
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
@@ -339,10 +339,7 @@ MonoBehaviour:
   m_missilePrefab: {fileID: 737227773312284924, guid: 35259bb3095d63641ad77cd9ef088572, type: 3}
   m_laserSounds:
   - {fileID: 8300000, guid: 93d24dfd942f9a64d8fa63723eb3298f, type: 3}
-  - {fileID: 8300000, guid: cec01c67e5ebb9546b5c928a4c0832c0, type: 3}
   - {fileID: 8300000, guid: e0f472892442c914d80f63778951be42, type: 3}
-  - {fileID: 8300000, guid: b26a5bdbe3953a44ba026a2a5cc2c010, type: 3}
-  - {fileID: 8300000, guid: 69594bb499103774ca2ee2922d490264, type: 3}
 --- !u!114 &6496451570696442823
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -375,7 +372,7 @@ MonoBehaviour:
   m_isOutByY: 0
   m_isMain: 1
   m_isTeleporting: 0
-  m_moveSpeed: 5
+  m_moveSpeed: 10
   m_rotationSpeed: 200
   m_clones:
   - {fileID: 0}
@@ -390,7 +387,7 @@ MonoBehaviour:
   m_thrustSprites: {fileID: 7995314582504336940}
   m_thrustAudioSource: {fileID: 8838945089261958118}
   m_thrustSound: {fileID: 8300000, guid: f77940d8ceecff2448c066579ba87096, type: 3}
-  m_thrustVolume: 0.2
+  m_thrustVolume: 0.01
 --- !u!82 &-5108868546207246067
 AudioSource:
   m_ObjectHideFlags: 0
@@ -495,6 +492,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4816948199581212169}
     m_Modifications:
+    - target: {fileID: 5133312271652884274, guid: 0b47743e98237d24ea302e814007bc6c, type: 3}
+      propertyPath: moveWithTransform
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5133312271652884274, guid: 0b47743e98237d24ea302e814007bc6c, type: 3}
       propertyPath: InitialModule.startSize.scalar
       value: 0.5
