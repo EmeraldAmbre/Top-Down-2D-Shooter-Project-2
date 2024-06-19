@@ -87,9 +87,7 @@ public class EnemyControler : MonoBehaviour {
 
     private IEnumerator Death(float time) {
 
-        yield return new WaitForSeconds(time);
-
-        GetComponent<Collider>().enabled = false;
+        GetComponent<PolygonCollider2D>().enabled = false;
         GetComponent<SpriteRenderer>().enabled = false;
 
         Vector3 bigAsteroidsScale = new (2, 2, 2);
@@ -105,6 +103,8 @@ public class EnemyControler : MonoBehaviour {
                 child.transform.localScale = newSize;
             }
         }
+
+        yield return new WaitForSeconds(time);
 
         Destroy(gameObject,0.8f);
     }
