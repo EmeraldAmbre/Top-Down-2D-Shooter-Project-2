@@ -69,7 +69,6 @@ public class EnemyControler : MonoBehaviour {
             m_hitParticlesInstance = Instantiate(m_hitParticles, gameObject.transform);
             m_hitParticlesInstance.transform.position = collider.transform.position;
             m_hitParticlesInstance.transform.rotation = Quaternion.LookRotation(Vector3.forward, collider.transform.up);
-            Debug.Log(m_hitParticlesInstance.transform.rotation.eulerAngles);
             
 
             m_lifePoints -= 1;
