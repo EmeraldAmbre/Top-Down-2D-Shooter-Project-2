@@ -87,6 +87,8 @@ public class EnemyControler : MonoBehaviour {
 
     private IEnumerator Death(float time) {
 
+        yield return new WaitForSeconds(time);
+
         GetComponent<Collider>().enabled = false;
         GetComponent<SpriteRenderer>().enabled = false;
 
@@ -103,8 +105,6 @@ public class EnemyControler : MonoBehaviour {
                 child.transform.localScale = newSize;
             }
         }
-
-        yield return new WaitForSeconds(time);
 
         Destroy(gameObject,0.8f);
     }
