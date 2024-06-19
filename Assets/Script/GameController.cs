@@ -6,7 +6,7 @@ public class GameController : MonoBehaviour
 {
     [SerializeField] private Vector3[]  m_spawnPoints = new Vector3[8];
     [SerializeField] private GameObject m_enemyPrefab;
-    [SerializeField] private float      m_spawnInterval = 6;
+    [SerializeField] private float      m_spawnInterval = 5;
 
     protected float m_timer;
 
