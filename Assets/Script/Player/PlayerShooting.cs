@@ -9,22 +9,17 @@ public class PlayerShooting : MonoBehaviour {
     [SerializeField] AudioClip[] m_laserSounds;
     int m_laserIndex;
 
-    private void Start()
-    {
-     m_audioSource = GetComponent<AudioSource>();  
-        
-    }
 
     void Update() {
 
         if (Input.GetKeyDown(KeyCode.Space)) {
             Quaternion fireRotation = transform.rotation;
             Vector3 firePosition = transform.position;
-            Instantiate(m_missilePrefab, firePosition, fireRotation);
+            GameObject laser = Instantiate(m_missilePrefab, firePosition, fireRotation);
             if (m_laserSounds.Length != 0)
             {
                 m_laserIndex = Random.Range(0, m_laserSounds.Length);
-                m_audioSource.PlayOneShot(m_laserSounds[m_laserIndex]);
+                laser.GetComponent<AudioSource>().PlayOneShot(m_laserSounds[m_laserIndex]);
             }
         }
     }

@@ -441,6 +441,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5102227403052399780, guid: fff1a1a4689e0514c9bed34e782b3916, type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6692236184600500255, guid: fff1a1a4689e0514c9bed34e782b3916, type: 3}
       propertyPath: m_Name
       value: Asteroids hit
