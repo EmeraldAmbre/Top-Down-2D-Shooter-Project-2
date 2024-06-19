@@ -1,24 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
 public class EnemyControler : MonoBehaviour {
 
-    [SerializeField] private Vector3    m_directionPoint;
-    [SerializeField] private Vector3    m_minSize;
-    [SerializeField] private float[]    m_targetCenter = new float[2];
-    [SerializeField] private float      m_targetRadius;
-    [SerializeField] private float      m_speed = 2.5f;
-    private GameObject m_hitLightInstance;
-    private GameObject m_hitParticlesInstance;
-    float m_impactLightIntensity;
-    [SerializeField] private int        m_lifePoints;
-    [SerializeField] private GameObject m_hitParticles;
-    [SerializeField] GameObject m_hitLightObject;
-    [SerializeField] private Sprite[]   m_asteroidsSprites;
+    [SerializeField] private Vector3     m_directionPoint;
+    [SerializeField] private Vector3     m_minSize;
+    [SerializeField] private float[]     m_targetCenter = new float[2];
+    [SerializeField] private float       m_targetRadius;
+    [SerializeField] private float       m_speed = 2.5f;
+    [SerializeField] private int         m_lifePoints;
+    [SerializeField] private GameObject  m_child;
+    [SerializeField] private GameObject  m_hitParticles;
+    [SerializeField] private GameObject  m_hitLightObject;
+    [SerializeField] private Sprite[]    m_asteroidsSprites;
     [SerializeField] private AudioClip[] m_hitSounds;
 
+    private GameObject m_hitLightInstance;
+    private GameObject m_hitParticlesInstance;
+    private float m_impactLightIntensity;
 
     SpriteRenderer m_spriteRenderer;
     AudioSource m_audioSource;
@@ -99,6 +101,8 @@ public class EnemyControler : MonoBehaviour {
         GetComponent<PolygonCollider2D>().enabled = false;
         GetComponent<SpriteRenderer>().enabled = false;
 
+        GameController._playerScore += 1;
+
         Vector3 bigAsteroidsScale = new (2, 2, 2);
 
         if (transform.localScale == bigAsteroidsScale) GameController._bigAsteroids -= 1;
@@ -108,7 +112,7 @@ public class EnemyControler : MonoBehaviour {
         if (newSize.magnitude >= m_minSize.magnitude)
         {
             for (int i = 0; i < 2; i++) {
-                GameObject child = Instantiate(gameObject, transform.position, transform.rotation);
+                GameObject child = Instantiate(m_child, transform.position, transform.rotation);
                 child.transform.localScale = newSize;
             }
         }
