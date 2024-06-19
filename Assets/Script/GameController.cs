@@ -21,6 +21,8 @@ public class GameController : MonoBehaviour
         _bigAsteroids = 0;
         _playerScore = 0;
 
+        m_scoreText.text = _bigAsteroids.ToString();
+
         for (int i = 0; i < 4; i++)
         {
             SpawnEnemy(m_initialSpawnPoints[i]);
@@ -36,8 +38,6 @@ public class GameController : MonoBehaviour
             SpawnEnemy(m_spawnPoints[Random.Range(0, 8)]);
             m_timer = 0f;
         }
-
-        m_scoreText.text = _bigAsteroids.ToString();
     }
 
     void SpawnEnemy(Vector3 spawnPosition)

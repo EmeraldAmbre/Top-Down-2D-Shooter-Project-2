@@ -211,8 +211,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff0405819a26fa44fa26fd9b661c9e24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  x_range: 35
-  y_range: 20
+  x_range: 32
+  y_range: 18
+  m_targetRadius: 18
+  m_targetCenter:
+  - 0
+  - 0
 --- !u!82 &8676007563110381959
 AudioSource:
   m_ObjectHideFlags: 0
