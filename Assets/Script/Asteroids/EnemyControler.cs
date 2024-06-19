@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class EnemyControler : MonoBehaviour {
 
@@ -15,6 +16,10 @@ public class EnemyControler : MonoBehaviour {
     [SerializeField] Sprite[] m_asteroidsSprites;
     int m_spritesIndex;
     SpriteRenderer m_spriteRenderer;
+
+    [SerializeField] Light2D m_impactLight;
+    [SerializeField] int m_lifePoints;
+    [SerializeField] GameObject m_hitParticles;
 
     private void Start() 
     {
@@ -31,8 +36,16 @@ public class EnemyControler : MonoBehaviour {
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {
-        if (collision.gameObject.CompareTag("Missile")) {
+        if (collision.gameObject.layer == 8) 
+        {
+            m_impactLight.transform.position = collision.GetContact(0).point;
+            m_hitParticles.transform.position = collision.GetContact(0).point;
+            m_hitParticles.SetActive(true);
+            m_impactLight.enabled = true;
+            if (m_lifePoints <= 0)
+            {
             StartCoroutine(Death(0.05f));
+            }
             m_hitSoundsIndex = Random.Range(0, m_hitSounds.Length);
             m_audioSource.PlayOneShot(m_hitSounds[m_hitSoundsIndex]);
         }
@@ -56,6 +69,7 @@ public class EnemyControler : MonoBehaviour {
             }
         }
         yield return new WaitForSeconds(time);
-        Destroy(gameObject);
+
+        Destroy(gameObject,0.5f);
     }
 }

@@ -26,7 +26,7 @@ public class BackGroundRandomiser : MonoBehaviour
             m_elementIndex = Random.Range(0, elements.Length);
             m_xValue = Random.Range(0, m_screenWidth);
             m_yValue = Random.Range(0, m_screenHeight);
-            m_scale = Random.Range(0.5f, 5f);
+            m_scale = Random.Range(1.5f, 6f);
             m_instantiatedObject = Instantiate(elements[m_elementIndex], Camera.main.ScreenToWorldPoint(new Vector3(m_xValue, m_yValue,10)), Quaternion.identity);
             m_instantiatedObject.transform.localScale = new Vector3 (m_scale,m_scale,1);
 
