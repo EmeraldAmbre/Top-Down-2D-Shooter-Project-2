@@ -32,11 +32,12 @@ public class Cleaner : MonoBehaviour {
         }
     }
 
-    private Vector3 GetRandomPointOnCircle(Vector2 center, float radius)
-    {
+    private Vector3 GetRandomPointOnCircle(Vector2 center, float radius) {
+
         float angle = Random.Range(0f, Mathf.PI * 2);
         float x = Mathf.Cos(angle) * radius + center.x;
         float y = Mathf.Sin(angle) * radius + center.y;
         return new Vector3(x, y, 0);
     }
+
 }
