@@ -42,6 +42,8 @@ public class PlayerParameters : MonoBehaviour {
                 m_lifeBar.GetlifeDown(m_maxHealth);
                 m_isInvincible = true;
                 m_invincibilityTimer = m_invincibilityDuration;
+
+                if (m_currentHealth == 0) Death();
                 //m_hitParticlesInstance = Instantiate(m_hitParticles, gameObject.transform);
                 //m_hitParticlesInstance.transform.position = collider.transform.position;
                 //m_hitParticlesInstance.transform.rotation = Quaternion.LookRotation(Vector3.forward, collider.transform.up);
