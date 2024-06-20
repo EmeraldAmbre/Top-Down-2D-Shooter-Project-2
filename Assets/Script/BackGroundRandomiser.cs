@@ -66,6 +66,8 @@ public class BackGroundRandomiser : MonoBehaviour
             // Increment the number of bonus on screen
             _nbBonusOnScreen += 1;
         }
+
+        if (_nbBonusOnScreen < 0) { _nbBonusOnScreen = 0; }
         
         m_timer += 1;
     }
