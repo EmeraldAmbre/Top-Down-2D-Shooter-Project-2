@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class PlayerParameters : MonoBehaviour {
@@ -8,13 +9,15 @@ public class PlayerParameters : MonoBehaviour {
     [SerializeField] private float     m_invincibilityDuration = 2.5f;
     [SerializeField] private LifeBar   m_lifeBar;
     [SerializeField] private AudioClip m_bumpSound;
+    [SerializeField] private Canvas    m_gameOverCanvas;
+    [SerializeField] private TextMeshProUGUI m_gameOverText;
 
     private int   m_currentHealth;
     private bool  m_isInvincible;
     private bool  m_isSpriteActive;
     private float m_invincibilityTimer;
-    [SerializeField] private GameObject m_hitParticlesInstance;
     private AudioSource m_audioSource;
+    [SerializeField] private GameObject m_hitParticlesInstance;
     [SerializeField] private GameObject m_hitParticles;
 
     void Start () {
@@ -79,6 +82,12 @@ public class PlayerParameters : MonoBehaviour {
     }
 
     private void Death() {
+        // Desactivate player components
+        gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        gameObject.GetComponent<PolygonCollider2D>().enabled = false;
 
+        // Activate Game Over Canvas
+        m_gameOverCanvas.gameObject.SetActive(false);
+        m_gameOverText.text = "Current score : " + GameController._playerScore.ToString();
     }
 }
