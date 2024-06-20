@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class PlayerParameters : MonoBehaviour {
 
@@ -88,13 +89,32 @@ public class PlayerParameters : MonoBehaviour {
 
     private void Death() {
         // Desactivate player components
-        gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        //gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        StartCoroutine(Dissolve());
         gameObject.GetComponent<PolygonCollider2D>().enabled = false;
         gameObject.GetComponent<PlayerControler>().enabled = false;
 
         // Activate Game Over Canvas
         m_gameOverCanvas.gameObject.SetActive(true);
         m_gameOverText.text = "Current score : " + GameController._playerScore.ToString();
+    }
+
+
+    IEnumerator Dissolve()
+    {
+        float timeElapsed = 0;
+        float lerpDuration = 2f;
+        Material dissolveMaterial = GetComponent<SpriteRenderer>().material;
+        int dissolveAmount = Shader.PropertyToID("_DissolveAmount");
+        float dissolveLerp;
+
+        while (timeElapsed < lerpDuration)
+        {
+            dissolveLerp = Mathf.Lerp(0, 1.1f, timeElapsed / lerpDuration);
+            dissolveMaterial.SetFloat(dissolveAmount, dissolveLerp);    
+            timeElapsed += Time.deltaTime;
+            yield return null;
+        }
     }
 
     public IEnumerator Shake()
