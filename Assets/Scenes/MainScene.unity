@@ -959,8 +959,12 @@ MonoBehaviour:
   - {fileID: 1194723218181284862, guid: 1a192593f3cb17d47ba916cfe0b127b4, type: 3}
   m_bonus: {fileID: 1048565007190910258, guid: 8b991ad4401a94b4093b9cfbf67a3f00, type: 3}
   m_nbMaxBonusOnScreen: 1
-  m_randomBonusSpawnMinInclusive: 1
-  m_randomBonusSpawnMaxExclusive: 10
+  m_randomBonusSpawnMinInclusive: 6
+  m_randomBonusSpawnMaxExclusive: 12
+  m_edgeCorner_minX: -32
+  m_edgeCorner_maxX: 32
+  m_edgeCorner_minY: -18
+  m_edgeCorner_maxY: 18
 --- !u!4 &1122240914
 Transform:
   m_ObjectHideFlags: 0
