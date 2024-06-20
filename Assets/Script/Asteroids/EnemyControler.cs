@@ -30,7 +30,8 @@ public class EnemyControler : MonoBehaviour {
     int m_spritesIndex;
     private GameObject m_explosionLightInstance;
 
-    private void Start() {
+    void Start() {
+
         m_spriteRenderer = GetComponent<SpriteRenderer>();
         m_spritesIndex   = Random.Range(0, m_asteroidsSprites.Length);
         m_spriteRenderer.sprite = m_asteroidsSprites[m_spritesIndex];
@@ -54,8 +55,15 @@ public class EnemyControler : MonoBehaviour {
         else if (scale == lilBro) m_lifePoints = 1;
     }
 
-    void OnTriggerEnter2D(Collider2D collider)
-    {
+    private void Update() {
+
+        if (!m_spriteRenderer.enabled && transform.childCount != 0) {
+            Destroy(transform.GetChild(0).gameObject);
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D collider) {
+
         if (collider.gameObject.layer == 8) {
 
             m_hitLightInstance = Instantiate(m_hitLightObject,gameObject.transform);
@@ -67,7 +75,7 @@ public class EnemyControler : MonoBehaviour {
             
 
             m_lifePoints -= 1;
-            if (m_lifePoints <= 0) { StartCoroutine(Death(0.05f)); }
+            if (m_lifePoints <= 0) { StartCoroutine(Death(1.2f)); }
 
             m_hitSoundsIndex = Random.Range(0, m_hitSounds.Length);
             m_audioSource.PlayOneShot(m_hitSounds[m_hitSoundsIndex]);
@@ -125,7 +133,7 @@ public class EnemyControler : MonoBehaviour {
 
         yield return new WaitForSeconds(time);
 
-        Destroy(gameObject,0.8f);
+        Destroy(gameObject);
     }
 
     IEnumerator FadeOut()
