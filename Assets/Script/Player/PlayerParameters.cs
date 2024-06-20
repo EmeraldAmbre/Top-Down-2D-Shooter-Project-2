@@ -90,7 +90,7 @@ public class PlayerParameters : MonoBehaviour {
         // Desactivate player components
         gameObject.GetComponent<SpriteRenderer>().enabled = false;
         gameObject.GetComponent<PolygonCollider2D>().enabled = false;
-        gameObject.GetComponent<GameController>().enabled = false;
+        gameObject.GetComponent<PlayerControler>().enabled = false;
 
         // Activate Game Over Canvas
         m_gameOverCanvas.gameObject.SetActive(true);
