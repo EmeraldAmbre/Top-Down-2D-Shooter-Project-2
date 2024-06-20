@@ -11,6 +11,12 @@ public class BackGroundRandomiser : MonoBehaviour
     [SerializeField] private float m_randomBonusSpawnMinInclusive = 1;
     [SerializeField] private float m_randomBonusSpawnMaxExclusive = 10;
 
+    // Dimensions of the scene
+    [SerializeField] private float m_edgeCorner_minX;
+    [SerializeField] private float m_edgeCorner_maxX;
+    [SerializeField] private float m_edgeCorner_minY;
+    [SerializeField] private float m_edgeCorner_maxY;
+
     private int   m_elementIndex;
     private int   m_numberOfElements;
     private bool  m_canCreateBonus;
@@ -68,9 +74,11 @@ public class BackGroundRandomiser : MonoBehaviour
 
     private IEnumerator CreateBonus(float time) {
 
-        int randomPosition = Random.Range(0, m_numberOfElements);
+        float randomPositionX = Random.Range(m_edgeCorner_minX, m_edgeCorner_maxX);
+        float randomPositionY = Random.Range(m_edgeCorner_minY, m_edgeCorner_maxY);
+        Vector3 randomPosition = new (randomPositionX, randomPositionY, 0);
 
-        Instantiate(m_bonus, m_planetPositions[randomPosition], Quaternion.identity);
+        Instantiate(m_bonus, randomPosition, Quaternion.identity);
 
         m_canCreateBonus = false;
 
