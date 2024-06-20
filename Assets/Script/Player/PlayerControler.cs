@@ -22,7 +22,6 @@ public class PlayerControler : MonoBehaviour {
     private Rigidbody2D m_rigidbody;
 
     void Start() {
-        m_thrustAudioSource = GetComponent<AudioSource>();
         m_rigidbody = GetComponent<Rigidbody2D>();
         m_isTeleporting = false;
     }
