@@ -1698,6 +1698,22 @@ PrefabInstance:
       propertyPath: m_clones.Array.data[7]
       value: 
       objectReference: {fileID: 722004855}
+    - target: {fileID: 2824129580589326437, guid: b78858291f5acbb49b77f31c28cb161e, type: 3}
+      propertyPath: m_Color.b
+      value: 0.6150943
+      objectReference: {fileID: 0}
+    - target: {fileID: 2824129580589326437, guid: b78858291f5acbb49b77f31c28cb161e, type: 3}
+      propertyPath: m_Color.g
+      value: 0.6150943
+      objectReference: {fileID: 0}
+    - target: {fileID: 2824129580589326437, guid: b78858291f5acbb49b77f31c28cb161e, type: 3}
+      propertyPath: m_Color.r
+      value: 0.6150943
+      objectReference: {fileID: 0}
+    - target: {fileID: 2824129580589326437, guid: b78858291f5acbb49b77f31c28cb161e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 18e3e07caf8d2034c8d0af8c1b592abc, type: 2}
     - target: {fileID: 4816948199581212169, guid: b78858291f5acbb49b77f31c28cb161e, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
