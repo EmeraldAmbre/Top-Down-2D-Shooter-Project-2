@@ -13,9 +13,10 @@ public class PlayerParameters : MonoBehaviour {
     private bool  m_isInvincible;
     private bool  m_isSpriteActive;
     private float m_invincibilityTimer;
-    [SerializeField] private GameObject m_hitParticlesInstance;
+    //[SerializeField] private GameObject m_hitParticlesInstance;
     private AudioSource m_audioSource;
-    [SerializeField] private GameObject m_hitParticles;
+    //[SerializeField] private GameObject m_hitParticles;
+    [SerializeField] private GameObject m_mainCamera;
 
     void Start () {
         m_isInvincible = false;
@@ -32,6 +33,7 @@ public class PlayerParameters : MonoBehaviour {
         if (collider.gameObject.layer == 6) {
             if (!m_isInvincible) {
                 m_currentHealth -= 1;
+                StartCoroutine(Shake());
                 m_audioSource.PlayOneShot(m_bumpSound);
                 m_lifeBar.GetlifeDown(m_maxHealth);
                 m_isInvincible = true;
@@ -80,5 +82,27 @@ public class PlayerParameters : MonoBehaviour {
 
     private void Death() {
 
+    }
+
+    public IEnumerator Shake()
+    {
+        float duration = 0.2f;
+        float magnitude = 0.1f;
+        Vector3 originalPos = m_mainCamera.transform.localPosition;
+
+        float elapsed = 0.0f;
+
+        while (elapsed < duration)
+        {
+            float x = Random.Range(-1f, 1f) * magnitude;
+            float y = Random.Range(-1f, 1f) * magnitude;
+
+            m_mainCamera.transform.localPosition = new Vector3(originalPos.x + x, originalPos.y + y, originalPos.z);
+
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        m_mainCamera.transform.localPosition = originalPos;
     }
 }
