@@ -31,6 +31,8 @@ public class PlayerParameters : MonoBehaviour {
 
     void Update () {
         InvincibilityFrame();
+
+        if (m_currentHealth == 0) Death();
     }
 
     void OnTriggerEnter2D(Collider2D collider) {
@@ -88,9 +90,10 @@ public class PlayerParameters : MonoBehaviour {
         // Desactivate player components
         gameObject.GetComponent<SpriteRenderer>().enabled = false;
         gameObject.GetComponent<PolygonCollider2D>().enabled = false;
+        gameObject.GetComponent<PlayerControler>().enabled = false;
 
         // Activate Game Over Canvas
-        m_gameOverCanvas.gameObject.SetActive(false);
+        m_gameOverCanvas.gameObject.SetActive(true);
         m_gameOverText.text = "Current score : " + GameController._playerScore.ToString();
     }
 
