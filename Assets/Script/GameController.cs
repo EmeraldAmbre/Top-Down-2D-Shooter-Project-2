@@ -9,6 +9,7 @@ public class GameController : MonoBehaviour
     [SerializeField] private Vector3[]  m_initialSpawnPoints = new Vector3[4];
     [SerializeField] private GameObject m_enemyPrefab;
     [SerializeField] private float      m_spawnInterval = 5;
+    [SerializeField] int m_spawnMax;
     [SerializeField] TextMeshProUGUI    m_scoreText;
 
     protected float m_timer;
@@ -35,7 +36,7 @@ public class GameController : MonoBehaviour
     {
         m_timer += Time.deltaTime;
 
-        if (m_timer >= m_spawnInterval && _bigAsteroids < 4)
+        if (m_timer >= m_spawnInterval && _bigAsteroids <= m_spawnMax)
         {
             SpawnEnemy(m_spawnPoints[Random.Range(0, 8)]);
             m_timer = 0f;
