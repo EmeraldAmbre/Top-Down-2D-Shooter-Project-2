@@ -190,6 +190,8 @@ MonoBehaviour:
   m_child: {fileID: 8637979295832772822, guid: ab003248acc5f064480764af428218d7, type: 3}
   m_hitParticles: {fileID: 6692236184600500255, guid: fff1a1a4689e0514c9bed34e782b3916, type: 3}
   m_hitLightObject: {fileID: 2262732006222842065, guid: ccbf7ca01d3cdb54a93657abce3339c9, type: 3}
+  m_explosionParticles: {fileID: 4416927994067571580, guid: 3edc962c2af3b8c4bb48e4e56c8ea688, type: 3}
+  m_explosionLightObject: {fileID: 2262732006222842065, guid: 3a2b926475f7518408923cf544430f31, type: 3}
   m_asteroidsSprites:
   - {fileID: 21300000, guid: 9cfe163b4d45209418bd2be099ec32b2, type: 3}
   - {fileID: 21300000, guid: 3eeb90bc59650ee46a5a110fd17343ad, type: 3}

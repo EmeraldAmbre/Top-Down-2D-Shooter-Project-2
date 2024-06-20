@@ -15,6 +15,8 @@ public class EnemyControler : MonoBehaviour {
     [SerializeField] private GameObject  m_child;
     [SerializeField] private GameObject  m_hitParticles;
     [SerializeField] private GameObject  m_hitLightObject;
+    [SerializeField] private GameObject m_explosionParticles;
+    [SerializeField] private GameObject m_explosionLightObject;
     [SerializeField] private Sprite[]    m_asteroidsSprites;
     [SerializeField] private AudioClip[] m_hitSounds;
 
@@ -26,6 +28,7 @@ public class EnemyControler : MonoBehaviour {
     AudioSource m_audioSource;
     int m_hitSoundsIndex;
     int m_spritesIndex;
+    private GameObject m_explosionLightInstance;
 
     private void Start() {
         m_spriteRenderer = GetComponent<SpriteRenderer>();
@@ -107,6 +110,10 @@ public class EnemyControler : MonoBehaviour {
         if (transform.localScale == bigAsteroidsScale) GameController._bigAsteroids -= 1;
 
         Vector3 newSize = transform.localScale * 0.5f;
+        
+        m_explosionLightInstance = Instantiate(m_explosionLightObject, transform.position, transform.rotation);
+        StartCoroutine(FadeOut());
+        Instantiate(m_explosionParticles, gameObject.transform.position, Quaternion.identity);
 
         if (newSize.magnitude >= m_minSize.magnitude)
         {
