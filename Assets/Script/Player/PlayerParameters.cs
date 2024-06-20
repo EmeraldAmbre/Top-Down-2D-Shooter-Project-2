@@ -31,6 +31,8 @@ public class PlayerParameters : MonoBehaviour {
 
     void Update () {
         InvincibilityFrame();
+
+        if (m_currentHealth == 0) Death();
     }
 
     void OnTriggerEnter2D(Collider2D collider) {
@@ -42,8 +44,6 @@ public class PlayerParameters : MonoBehaviour {
                 m_lifeBar.GetlifeDown(m_maxHealth);
                 m_isInvincible = true;
                 m_invincibilityTimer = m_invincibilityDuration;
-
-                if (m_currentHealth == 0) Death();
                 //m_hitParticlesInstance = Instantiate(m_hitParticles, gameObject.transform);
                 //m_hitParticlesInstance.transform.position = collider.transform.position;
                 //m_hitParticlesInstance.transform.rotation = Quaternion.LookRotation(Vector3.forward, collider.transform.up);
@@ -90,9 +90,10 @@ public class PlayerParameters : MonoBehaviour {
         // Desactivate player components
         gameObject.GetComponent<SpriteRenderer>().enabled = false;
         gameObject.GetComponent<PolygonCollider2D>().enabled = false;
+        gameObject.GetComponent<GameController>().enabled = false;
 
         // Activate Game Over Canvas
-        m_gameOverCanvas.gameObject.SetActive(false);
+        m_gameOverCanvas.gameObject.SetActive(true);
         m_gameOverText.text = "Current score : " + GameController._playerScore.ToString();
     }
 
