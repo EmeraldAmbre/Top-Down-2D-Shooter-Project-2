@@ -15,6 +15,8 @@ public class EnemyControler : MonoBehaviour {
     [SerializeField] private GameObject  m_child;
     [SerializeField] private GameObject  m_hitParticles;
     [SerializeField] private GameObject  m_hitLightObject;
+    [SerializeField] private GameObject m_explosionParticles;
+    [SerializeField] private GameObject m_explosionLightObject;
     [SerializeField] private Sprite[]    m_asteroidsSprites;
     [SerializeField] private AudioClip[] m_hitSounds;
 
@@ -26,8 +28,10 @@ public class EnemyControler : MonoBehaviour {
     AudioSource m_audioSource;
     int m_hitSoundsIndex;
     int m_spritesIndex;
+    private GameObject m_explosionLightInstance;
 
-    private void Start() {
+    void Start() {
+
         m_spriteRenderer = GetComponent<SpriteRenderer>();
         m_spritesIndex   = Random.Range(0, m_asteroidsSprites.Length);
         m_spriteRenderer.sprite = m_asteroidsSprites[m_spritesIndex];
@@ -51,8 +55,15 @@ public class EnemyControler : MonoBehaviour {
         else if (scale == lilBro) m_lifePoints = 1;
     }
 
-    void OnTriggerEnter2D(Collider2D collider)
-    {
+    private void Update() {
+
+        if (!m_spriteRenderer.enabled && transform.childCount != 0) {
+            Destroy(transform.GetChild(0).gameObject);
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D collider) {
+
         if (collider.gameObject.layer == 8) {
 
             m_hitLightInstance = Instantiate(m_hitLightObject,gameObject.transform);
@@ -61,11 +72,10 @@ public class EnemyControler : MonoBehaviour {
             m_hitParticlesInstance = Instantiate(m_hitParticles, gameObject.transform);
             m_hitParticlesInstance.transform.position = collider.transform.position;
             m_hitParticlesInstance.transform.rotation = Quaternion.LookRotation(Vector3.forward, collider.transform.up);
-            Debug.Log(m_hitParticlesInstance.transform.rotation.eulerAngles);
             
 
             m_lifePoints -= 1;
-            if (m_lifePoints <= 0) { StartCoroutine(Death(0.05f)); }
+            if (m_lifePoints <= 0) { StartCoroutine(Death(1.2f)); }
 
             m_hitSoundsIndex = Random.Range(0, m_hitSounds.Length);
             m_audioSource.PlayOneShot(m_hitSounds[m_hitSoundsIndex]);
@@ -108,6 +118,10 @@ public class EnemyControler : MonoBehaviour {
         if (transform.localScale == bigAsteroidsScale) GameController._bigAsteroids -= 1;
 
         Vector3 newSize = transform.localScale * 0.5f;
+        
+        m_explosionLightInstance = Instantiate(m_explosionLightObject, transform.position, transform.rotation);
+        StartCoroutine(FadeOut());
+        Instantiate(m_explosionParticles, gameObject.transform.position, Quaternion.identity);
 
         if (newSize.magnitude >= m_minSize.magnitude)
         {
@@ -119,7 +133,7 @@ public class EnemyControler : MonoBehaviour {
 
         yield return new WaitForSeconds(time);
 
-        Destroy(gameObject,0.8f);
+        Destroy(gameObject);
     }
 
     IEnumerator FadeOut()

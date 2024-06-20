@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 3eeb90bc59650ee46a5a110fd17343ad, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9cfe163b4d45209418bd2be099ec32b2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -152,7 +152,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.433, y: 1.4885494}
+    oldSize: {x: 2.18, y: 2.0873926}
     newSize: {x: 1, y: 0.8828125}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -160,12 +160,12 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.25, y: 0.43359375}
-      - {x: -0.5, y: 0}
-      - {x: -0.25, y: -0.43359375}
-      - {x: 0.25, y: -0.43359375}
-      - {x: 0.5, y: 0}
-      - {x: 0.25, y: 0.43359375}
+    - - {x: -0.713222, y: 1.0273008}
+      - {x: -1.0219402, y: -0.006524235}
+      - {x: -0.6088339, y: -0.981631}
+      - {x: 0.41310626, y: -0.9881551}
+      - {x: 1.0415127, y: -0.019572705}
+      - {x: 0.563164, y: 1.0403492}
   m_UseDelaunayMesh: 0
 --- !u!114 &6532402923664789699
 MonoBehaviour:
@@ -190,6 +190,8 @@ MonoBehaviour:
   m_child: {fileID: 8637979295832772822, guid: ab003248acc5f064480764af428218d7, type: 3}
   m_hitParticles: {fileID: 6692236184600500255, guid: fff1a1a4689e0514c9bed34e782b3916, type: 3}
   m_hitLightObject: {fileID: 2262732006222842065, guid: ccbf7ca01d3cdb54a93657abce3339c9, type: 3}
+  m_explosionParticles: {fileID: 4416927994067571580, guid: 3edc962c2af3b8c4bb48e4e56c8ea688, type: 3}
+  m_explosionLightObject: {fileID: 2262732006222842065, guid: 3a2b926475f7518408923cf544430f31, type: 3}
   m_asteroidsSprites:
   - {fileID: 21300000, guid: 9cfe163b4d45209418bd2be099ec32b2, type: 3}
   - {fileID: 21300000, guid: 3eeb90bc59650ee46a5a110fd17343ad, type: 3}
@@ -211,8 +213,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff0405819a26fa44fa26fd9b661c9e24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  x_range: 35
-  y_range: 20
+  x_range: 32
+  y_range: 18
+  m_targetRadius: 18
+  m_targetCenter:
+  - 0
+  - 0
 --- !u!82 &8676007563110381959
 AudioSource:
   m_ObjectHideFlags: 0

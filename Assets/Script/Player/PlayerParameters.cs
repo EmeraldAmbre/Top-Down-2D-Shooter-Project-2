@@ -13,7 +13,9 @@ public class PlayerParameters : MonoBehaviour {
     private bool  m_isInvincible;
     private bool  m_isSpriteActive;
     private float m_invincibilityTimer;
+    [SerializeField] private GameObject m_hitParticlesInstance;
     private AudioSource m_audioSource;
+    [SerializeField] private GameObject m_hitParticles;
 
     void Start () {
         m_isInvincible = false;
@@ -34,6 +36,9 @@ public class PlayerParameters : MonoBehaviour {
                 m_lifeBar.GetlifeDown(m_maxHealth);
                 m_isInvincible = true;
                 m_invincibilityTimer = m_invincibilityDuration;
+                //m_hitParticlesInstance = Instantiate(m_hitParticles, gameObject.transform);
+                //m_hitParticlesInstance.transform.position = collider.transform.position;
+                //m_hitParticlesInstance.transform.rotation = Quaternion.LookRotation(Vector3.forward, collider.transform.up);
             }
         }
     }
