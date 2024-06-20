@@ -957,6 +957,10 @@ MonoBehaviour:
   - {fileID: 269917856989315649, guid: 8166a957a0eb3724594053c3db38377c, type: 3}
   - {fileID: 4172234300953584340, guid: e60ec3000aa022e4cb6f68ff2bc4fe0c, type: 3}
   - {fileID: 1194723218181284862, guid: 1a192593f3cb17d47ba916cfe0b127b4, type: 3}
+  m_bonus: {fileID: 1048565007190910258, guid: 8b991ad4401a94b4093b9cfbf67a3f00, type: 3}
+  m_nbMaxBonusOnScreen: 5
+  m_randomBonusSpawnMinInclusive: 1
+  m_randomBonusSpawnMaxExclusive: 10
 --- !u!4 &1122240914
 Transform:
   m_ObjectHideFlags: 0
