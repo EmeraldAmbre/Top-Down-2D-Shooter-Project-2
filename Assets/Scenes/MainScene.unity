@@ -589,7 +589,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0, g: 0, b: 0.25490198, a: 1}
+  m_Color: {r: 0, g: 0, b: 0.10943389, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1570,8 +1570,8 @@ MonoBehaviour:
   - {x: 25, y: -15, z: 0}
   - {x: -25, y: -15, z: 0}
   m_enemyPrefab: {fileID: 700040816941011377, guid: e46ca655096d32044833938f7081d93f, type: 3}
-  m_spawnInterval: 5
-  m_spawnMax: 4
+  m_spawnInterval: 2
+  m_spawnMax: 6
   m_scoreText: {fileID: 613240689}
 --- !u!1001 &811743160678143697
 PrefabInstance:

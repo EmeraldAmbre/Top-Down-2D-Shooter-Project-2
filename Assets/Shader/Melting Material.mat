@@ -44,7 +44,7 @@ Material:
     - _OutlineThickness: 0.1
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Vertical_Dissolve: 1.1
+    - _Vertical_Dissolve: 0.609
     m_Colors: []
   m_BuildTextureStacks: []
 --- !u!114 &1833457471910231681

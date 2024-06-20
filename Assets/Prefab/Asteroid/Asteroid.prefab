@@ -185,7 +185,7 @@ MonoBehaviour:
   - 0
   - 0
   m_targetRadius: 18
-  m_speed: 2
+  m_speed: 3
   m_lifePoints: 3
   m_child: {fileID: 8637979295832772822, guid: ab003248acc5f064480764af428218d7, type: 3}
   m_hitParticles: {fileID: 6692236184600500255, guid: fff1a1a4689e0514c9bed34e782b3916, type: 3}
