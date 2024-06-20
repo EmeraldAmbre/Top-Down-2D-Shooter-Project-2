@@ -27,13 +27,15 @@ public class GameController : MonoBehaviour
         {
             SpawnEnemy(m_initialSpawnPoints[i]);
         }
+
+        _bigAsteroids = 4;
     }
 
     void Update()
     {
         m_timer += Time.deltaTime;
 
-        if (m_timer >= m_spawnInterval && _bigAsteroids <= 4)
+        if (m_timer >= m_spawnInterval && _bigAsteroids < 4)
         {
             SpawnEnemy(m_spawnPoints[Random.Range(0, 8)]);
             m_timer = 0f;
@@ -43,6 +45,6 @@ public class GameController : MonoBehaviour
     void SpawnEnemy(Vector3 spawnPosition)
     {
         GameObject newEnemy = Instantiate(m_enemyPrefab, spawnPosition, Quaternion.identity);
-        _bigAsteroids++;
+        _bigAsteroids += 1;
     }
 }
