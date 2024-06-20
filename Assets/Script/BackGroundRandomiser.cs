@@ -12,10 +12,10 @@ public class BackGroundRandomiser : MonoBehaviour
     [SerializeField] private float m_randomBonusSpawnMaxExclusive = 10;
 
     // Dimensions of the scene
-    [SerializeField] private float m_edgeCorner_minX;
-    [SerializeField] private float m_edgeCorner_maxX;
-    [SerializeField] private float m_edgeCorner_minY;
-    [SerializeField] private float m_edgeCorner_maxY;
+    [SerializeField] private float m_edgeCorner_minX = -32f;
+    [SerializeField] private float m_edgeCorner_maxX =  32f;
+    [SerializeField] private float m_edgeCorner_minY = -18f;
+    [SerializeField] private float m_edgeCorner_maxY =  18f;
 
     private int   m_elementIndex;
     private int   m_numberOfElements;
