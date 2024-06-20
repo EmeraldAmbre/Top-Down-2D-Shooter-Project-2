@@ -39,6 +39,8 @@ public class GameController : MonoBehaviour
             SpawnEnemy(m_spawnPoints[Random.Range(0, 8)]);
             m_timer = 0f;
         }
+
+        m_scoreText.text = _playerScore.ToString();
     }
 
     void SpawnEnemy(Vector3 spawnPosition)

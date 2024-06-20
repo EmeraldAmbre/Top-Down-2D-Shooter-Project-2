@@ -1681,6 +1681,10 @@ PrefabInstance:
       propertyPath: m_lifeBar
       value: 
       objectReference: {fileID: 41334182}
+    - target: {fileID: 6496451570696442823, guid: b78858291f5acbb49b77f31c28cb161e, type: 3}
+      propertyPath: m_mainCamera
+      value: 
+      objectReference: {fileID: 519420028}
     - target: {fileID: 7167887924158079283, guid: b78858291f5acbb49b77f31c28cb161e, type: 3}
       propertyPath: m_laserSounds.Array.size
       value: 2
