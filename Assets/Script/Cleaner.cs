@@ -13,15 +13,7 @@ public class Cleaner : MonoBehaviour {
 
     void Update()
     {
-        if (Mathf.Abs(transform.position.x) > x_range || Mathf.Abs(transform.position.y) > y_range)
-        {
-            Vector3 bigAsteroidsScale = new(2, 2, 2);
-
-            // Big Asteroids on screen counter
-            if (transform.localScale == bigAsteroidsScale) {
-
-                GameController._bigAsteroids -= 1;
-            }
+        if (Mathf.Abs(transform.position.x) > x_range || Mathf.Abs(transform.position.y) > y_range) {
 
             // Keeping Asteroids on screen, destroying shots
             if (gameObject.layer == 6) {
@@ -31,19 +23,21 @@ public class Cleaner : MonoBehaviour {
                 m_directionPoint = GetRandomPointOnCircle(center, m_targetRadius);
                 Vector3 direction = m_directionPoint - transform.position;
                 direction.Normalize();
-                gameObject.GetComponent<Rigidbody2D>().AddForce(direction, ForceMode2D.Impulse);
+                gameObject.GetComponent<Rigidbody2D>().AddForce(direction * 0.05f, ForceMode2D.Impulse);
             }
+
             else {
                 Destroy(gameObject);
             }
         }
     }
 
-    private Vector3 GetRandomPointOnCircle(Vector2 center, float radius)
-    {
+    private Vector3 GetRandomPointOnCircle(Vector2 center, float radius) {
+
         float angle = Random.Range(0f, Mathf.PI * 2);
         float x = Mathf.Cos(angle) * radius + center.x;
         float y = Mathf.Sin(angle) * radius + center.y;
         return new Vector3(x, y, 0);
     }
+
 }

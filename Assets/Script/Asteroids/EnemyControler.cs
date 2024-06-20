@@ -15,8 +15,8 @@ public class EnemyControler : MonoBehaviour {
     [SerializeField] private GameObject  m_child;
     [SerializeField] private GameObject  m_hitParticles;
     [SerializeField] private GameObject  m_hitLightObject;
-    [SerializeField] private GameObject m_explosionParticles;
-    [SerializeField] private GameObject m_explosionLightObject;
+    [SerializeField] private GameObject  m_explosionParticles;
+    [SerializeField] private GameObject  m_explosionLightObject;
     [SerializeField] private Sprite[]    m_asteroidsSprites;
     [SerializeField] private AudioClip[] m_hitSounds;
 
