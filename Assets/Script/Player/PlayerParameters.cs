@@ -93,6 +93,7 @@ public class PlayerParameters : MonoBehaviour {
         StartCoroutine(Dissolve());
         gameObject.GetComponent<PolygonCollider2D>().enabled = false;
         gameObject.GetComponent<PlayerControler>().enabled = false;
+        gameObject.GetComponent<PlayerShooting>().enabled = false;
 
         // Activate Game Over Canvas
         m_gameOverCanvas.gameObject.SetActive(true);

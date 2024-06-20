@@ -958,7 +958,7 @@ MonoBehaviour:
   - {fileID: 4172234300953584340, guid: e60ec3000aa022e4cb6f68ff2bc4fe0c, type: 3}
   - {fileID: 1194723218181284862, guid: 1a192593f3cb17d47ba916cfe0b127b4, type: 3}
   m_bonus: {fileID: 1048565007190910258, guid: 8b991ad4401a94b4093b9cfbf67a3f00, type: 3}
-  m_nbMaxBonusOnScreen: 5
+  m_nbMaxBonusOnScreen: 1
   m_randomBonusSpawnMinInclusive: 1
   m_randomBonusSpawnMaxExclusive: 10
 --- !u!4 &1122240914
@@ -1791,6 +1791,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 686740919210136213, guid: b78858291f5acbb49b77f31c28cb161e, type: 3}
+      propertyPath: m_Color.b
+      value: 0.67058825
+      objectReference: {fileID: 0}
+    - target: {fileID: 686740919210136213, guid: b78858291f5acbb49b77f31c28cb161e, type: 3}
+      propertyPath: m_Color.g
+      value: 0.8784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 686740919210136213, guid: b78858291f5acbb49b77f31c28cb161e, type: 3}
+      propertyPath: m_Color.r
+      value: 0.9764706
+      objectReference: {fileID: 0}
     - target: {fileID: 1420043201122581471, guid: b78858291f5acbb49b77f31c28cb161e, type: 3}
       propertyPath: m_moveSpeed
       value: 10
