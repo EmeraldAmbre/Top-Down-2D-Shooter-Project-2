@@ -102,10 +102,10 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 236.25
-        height: 315
+        width: 275.5
+        height: 393
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -121,12 +121,12 @@ TextureImporter:
       name: explosion_1
       rect:
         serializedVersion: 2
-        x: 236
+        x: 278
         y: 0
-        width: 236.25
-        height: 315
+        width: 276
+        height: 393
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -142,12 +142,12 @@ TextureImporter:
       name: explosion_2
       rect:
         serializedVersion: 2
-        x: 472
+        x: 550
         y: 0
-        width: 236.25
-        height: 315
+        width: 275.5
+        height: 393
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -163,12 +163,12 @@ TextureImporter:
       name: explosion_3
       rect:
         serializedVersion: 2
-        x: 708
+        x: 825
         y: 0
-        width: 236.25
-        height: 315
+        width: 275.5
+        height: 393
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
