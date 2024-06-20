@@ -139,7 +139,7 @@ public class EnemyControler : MonoBehaviour {
     IEnumerator FadeOut()
     {
         float timeElapsed = 0;
-        float lerpDuration = 500f;
+        float lerpDuration = 80f;
         Light2D light = m_hitLightInstance.GetComponent<Light2D>();
         while (timeElapsed < lerpDuration)
         {          
