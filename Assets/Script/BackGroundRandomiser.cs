@@ -11,15 +11,21 @@ public class BackGroundRandomiser : MonoBehaviour
     [SerializeField] private float m_randomBonusSpawnMinInclusive = 1;
     [SerializeField] private float m_randomBonusSpawnMaxExclusive = 10;
 
+    // Dimensions of the scene
+    [SerializeField] private float m_edgeCorner_minX = -30.5f;
+    [SerializeField] private float m_edgeCorner_maxX =  30.5f;
+    [SerializeField] private float m_edgeCorner_minY = -16.5f;
+    [SerializeField] private float m_edgeCorner_maxY =  16.5f;
+
     private int   m_elementIndex;
     private int   m_numberOfElements;
+    private bool  m_canCreateBonus;
     private float m_screenWidth;
     private float m_screenHeight;
     private float m_scale;
     private float m_xValue;
     private float m_yValue;
-    private float m_spawnTimer;
-    private float m_timer;
+    private float m_spawnInterval;
 
     // Created planets in the background & their positions
     private GameObject m_instantiatedObject;
@@ -30,15 +36,15 @@ public class BackGroundRandomiser : MonoBehaviour
 
     void Start() {
         _nbBonusOnScreen = 0;
-        m_timer = 0;
+        m_canCreateBonus = true;
         m_screenWidth = Screen.width;
-        m_screenHeight = Screen.height; 
+        m_screenHeight = Screen.height;
         m_numberOfElements = Random.Range(3, 6);
         m_planetPositions = new Vector3[m_numberOfElements];
 
         if (m_randomBonusSpawnMinInclusive < 1) { m_randomBonusSpawnMinInclusive = 1; }
-        if (m_randomBonusSpawnMaxExclusive < 2) { m_randomBonusSpawnMinInclusive = 2; }
-        m_spawnTimer = Random.Range(m_randomBonusSpawnMinInclusive, m_randomBonusSpawnMaxExclusive);
+        if (m_randomBonusSpawnMaxExclusive < 2) { m_randomBonusSpawnMaxExclusive = 2; }
+        m_spawnInterval = Random.Range(m_randomBonusSpawnMinInclusive, m_randomBonusSpawnMaxExclusive);
 
         for (int i = 0; i < m_numberOfElements; i++) {
 
@@ -54,22 +60,31 @@ public class BackGroundRandomiser : MonoBehaviour
 
     void Update() {
 
-        if (m_timer <= m_spawnTimer && _nbBonusOnScreen < m_nbMaxBonusOnScreen) {
+        if (m_canCreateBonus) {
             // Create the bonus at a random planet on screen position
-            int randomPosition = Random.Range(0, m_numberOfElements);
-            Instantiate(m_bonus, m_planetPositions[randomPosition], Quaternion.identity);
+            StartCoroutine(CreateBonus(m_spawnInterval));
 
-            // Reset the timer, initiate a new max spawn timer
-            m_spawnTimer = Random.Range(m_randomBonusSpawnMinInclusive, m_randomBonusSpawnMaxExclusive);
-            m_timer = 0;
+            // Reset the spawn timer, initiate a new one
+            m_spawnInterval = Random.Range(m_randomBonusSpawnMinInclusive, m_randomBonusSpawnMaxExclusive);
 
             // Increment the number of bonus on screen
             _nbBonusOnScreen += 1;
         }
+    }
 
-        if (_nbBonusOnScreen < 0) { _nbBonusOnScreen = 0; }
-        
-        m_timer += 1;
+    private IEnumerator CreateBonus(float time) {
+
+        float randomPositionX = Random.Range(m_edgeCorner_minX, m_edgeCorner_maxX);
+        float randomPositionY = Random.Range(m_edgeCorner_minY, m_edgeCorner_maxY);
+        Vector3 randomPosition = new (randomPositionX, randomPositionY, 0);
+
+        Instantiate(m_bonus, randomPosition, Quaternion.identity);
+
+        m_canCreateBonus = false;
+
+        yield return new WaitForSeconds(time);
+
+        m_canCreateBonus = true;
     }
 
 }
