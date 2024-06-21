@@ -674,6 +674,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3986715223625559861, guid: 22182892068a1144db7e9992e34adad7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ExitGame
+      objectReference: {fileID: 0}
     - target: {fileID: 5644141453163338201, guid: 22182892068a1144db7e9992e34adad7, type: 3}
       propertyPath: m_IsActive
       value: 0
