@@ -41,6 +41,8 @@ public class GameController : MonoBehaviour
         }
 
         m_scoreText.text = _playerScore.ToString();
+
+        if (Input.GetKeyDown(KeyCode.Escape)) { Application.Quit(); }
     }
 
     void SpawnEnemy(Vector3 spawnPosition)
