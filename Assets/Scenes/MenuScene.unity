@@ -162,8 +162,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -75}
-  m_SizeDelta: {x: 600, y: 180}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 200, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &586665196
 MonoBehaviour:
@@ -630,7 +630,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -764,26 +764,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Particle System
       objectReference: {fileID: 0}
-    - target: {fileID: 2655515959195151990, guid: 6de42dd9d061f094ba472095afa114f0, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4212652023257667348, guid: 6de42dd9d061f094ba472095afa114f0, type: 3}
-      propertyPath: prewarm
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4212652023257667348, guid: 6de42dd9d061f094ba472095afa114f0, type: 3}
-      propertyPath: NoiseModule.enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4212652023257667348, guid: 6de42dd9d061f094ba472095afa114f0, type: 3}
-      propertyPath: InitialModule.startSpeed.scalar
-      value: 14
-      objectReference: {fileID: 0}
-    - target: {fileID: 4212652023257667348, guid: 6de42dd9d061f094ba472095afa114f0, type: 3}
-      propertyPath: InitialModule.startSpeed.minScalar
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 4489048537146269531, guid: 6de42dd9d061f094ba472095afa114f0, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -863,10 +843,6 @@ PrefabInstance:
     - target: {fileID: 4489048537146269531, guid: 6de42dd9d061f094ba472095afa114f0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5540582538784618870, guid: 6de42dd9d061f094ba472095afa114f0, type: 3}
-      propertyPath: m_SortingOrder
-      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
