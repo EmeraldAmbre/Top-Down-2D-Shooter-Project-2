@@ -13,4 +13,8 @@ public class StartButton : MonoBehaviour {
     public void StartGame() {
         TransitionManager.Instance().Transition(m_sceneToLoadName, m_transitionSettings, m_transitionDelay);
     }
+
+    private void Update() {
+        if (Input.GetButtonDown("Fire1")) StartGame();
+    }
 }
