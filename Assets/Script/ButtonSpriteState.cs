@@ -14,6 +14,9 @@ public class ButtonSpriteState : MonoBehaviour, IPointerEnterHandler, IPointerEx
     Image image;
     [SerializeField]
     GameObject particle;
+    AudioSource audioSource;
+    [SerializeField] AudioClip m_hoverClip;
+    [SerializeField] AudioClip m_clickClip;
 
     
 
@@ -23,6 +26,7 @@ public class ButtonSpriteState : MonoBehaviour, IPointerEnterHandler, IPointerEx
         thisbutton = gameObject.GetComponent<Button>();
         image = gameObject.GetComponent<Image>();
         image.sprite = idleSprite;
+        audioSource = gameObject.GetComponent<AudioSource>();
 
     }
 
@@ -31,16 +35,20 @@ public class ButtonSpriteState : MonoBehaviour, IPointerEnterHandler, IPointerEx
     {
         image.sprite = highlightedSprite;
         particle.SetActive(true);
+        audioSource.Play();
     }
 
     void SpriteToIdle()
     {
+        audioSource.Stop();
         image.sprite = idleSprite;
         particle.SetActive(false);
     }
 
     void SpriteToPushed()
     {
+        audioSource.Stop();
+        audioSource.PlayOneShot(m_clickClip);
         image.sprite = pushedSprite;
         particle.SetActive(false);
     }
