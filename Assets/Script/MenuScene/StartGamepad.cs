@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StartButton : MonoBehaviour {
+public class StartGamepad : MonoBehaviour {
 
     [SerializeField] private TransitionSettings m_transitionSettings;
 
@@ -11,7 +11,8 @@ public class StartButton : MonoBehaviour {
 
     [SerializeField] private string m_sceneToLoadName;
 
-    public void StartGame() {
-        TransitionManager.Instance().Transition(m_sceneToLoadName, m_transitionSettings, m_transitionDelay);
+    void Update()
+    {
+        if (Input.GetButtonDown("Fire1")) TransitionManager.Instance().Transition(m_sceneToLoadName, m_transitionSettings, m_transitionDelay);
     }
 }
